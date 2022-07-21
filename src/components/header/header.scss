@@ -1,0 +1,20 @@
+.header {
+  background-color: black;
+  padding: 10px 0px;
+  .MuiContainer-root {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__actions {
+    align-self: center;
+    .MuiInput-root {
+      background-color: white;
+      padding: 5px;
+      border-radius: 8px;
+    }
+    .MuiButton-root {
+      margin-left: 15px;
+      padding: 8px 15px;
+    }
+  }
+}
