@@ -3,7 +3,7 @@ import './page_characters.scss';
 import Header from "../../components/header/header";
 import Menu from "../../components/menu/menu";
 import CardPerson from "../../components/cards/cardPerson/card";
-import {Container, Grid} from "@mui/material";
+import {Container, Grid, Pagination} from "@mui/material";
 import Characters from "../../services/characters";
 import {getAllCharactersAction} from "../../store/characters/actions";
 import {useDispatch, useSelector} from "react-redux";
@@ -32,6 +32,7 @@ const PageCharacters: FC = () => {
                         </Grid>
                     ))}
                 </Grid>
+                <Pagination count={10} />
             </Container>
         </div>
     );
