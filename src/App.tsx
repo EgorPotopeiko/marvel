@@ -1,27 +1,12 @@
-import React, {useEffect, useLayoutEffect, useState} from 'react';
+import React, {FC} from 'react';
 import './App.scss';
-import Header from "./components/header/header";
-import Characters from "./services/characters";
+import PageCharacters from "./pages/page_characters/page_characters";
+import {useDispatch} from "react-redux";
 
-const {getAllCharacters} = Characters;
-
-const App: React.FC = () => {
-    const [charact, setCharact] = useState(null);
-    useEffect(() => {
-       getAllCharacters()
-               .then((result) => result.data)
-               .then((data) => data.data)
-               .then((details) => details.results)
-               .then((characters) => {
-                   if (characters.length !== 0) {
-                       setCharact(characters)
-                   }
-               })
-    }, [])
-    console.log(charact)
+const App: FC = () => {
   return (
     <div className="App">
-        <Header />
+        <PageCharacters />
     </div>
   );
 }

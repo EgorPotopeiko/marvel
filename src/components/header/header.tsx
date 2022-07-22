@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {FC} from 'react';
 import './header.scss';
 import {Button, Container, Input} from "@mui/material";
 
-const Header: React.FC = () => {
+const Header: FC = () => {
     return (
         <div className="header">
             <Container maxWidth='lg'>

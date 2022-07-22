@@ -1,0 +1,21 @@
+.menu {
+  background-color: rgba(236, 9, 9, 0.78);
+  margin-bottom: 15px;
+  .MuiContainer-root {
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 0px;
+  }
+  &__item {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 10px;
+    transition: .3s all;
+    &:hover {
+      background-color: black;
+    }
+  }
+}

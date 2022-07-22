@@ -1,0 +1,1 @@
+export const stateCharacters = (state: any) => state.characters.characters;

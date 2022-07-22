@@ -1,0 +1,23 @@
+.menu {
+  background-color: rgba(236, 9, 9, 0.78);
+  margin-bottom: 15px;
+}
+.menu .MuiContainer-root {
+  display: flex;
+  justify-content: space-around;
+  padding: 5px 0px;
+}
+.menu__item {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 10px;
+  transition: 0.3s all;
+}
+.menu__item:hover {
+  background-color: black;
+}
+
+/*# sourceMappingURL=menu.css.map */
