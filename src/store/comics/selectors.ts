@@ -1,0 +1,1 @@
+export const stateComics = (state: any) => state.comics.comics;

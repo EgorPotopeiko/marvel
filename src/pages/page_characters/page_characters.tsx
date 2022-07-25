@@ -1,25 +1,27 @@
-import React, {FC, useEffect} from 'react';
+import React, {FC, useEffect, useState} from 'react';
 import './page_characters.scss';
 import Header from "../../components/header/header";
 import Menu from "../../components/menu/menu";
-import CardPerson from "../../components/cards/cardPerson/card";
+import CardPerson from "../../components/cards/card_person/card";
 import {Container, Grid, Pagination} from "@mui/material";
 import Characters from "../../services/characters";
 import {getAllCharactersAction} from "../../store/characters/actions";
 import {useDispatch, useSelector} from "react-redux";
 import {stateCharacters} from "../../store/characters/selectors";
+import {statePage} from "../../store/pagination/selectors";
+import {setPage} from "../../store/pagination/actions";
 
 const {getAllCharacters} = Characters
 
 const PageCharacters: FC = () => {
     const dispatch = useDispatch();
-    const characters = useSelector(stateCharacters)
+    const characters = useSelector(stateCharacters);
+    const getPage = useSelector(statePage);
     useEffect(() => {
-        getAllCharacters()
+        getAllCharacters(getPage - 1)
             .then((res) => res.data.data)
             .then((data) => dispatch(getAllCharactersAction(data.results)))
-    }, [])
-    console.log(characters)
+    }, [getPage])
     return (
         <div className="page__characters">
             <Header />
@@ -32,7 +34,7 @@ const PageCharacters: FC = () => {
                         </Grid>
                     ))}
                 </Grid>
-                <Pagination count={10} />
+                <Pagination count={Math.floor(1562 / 20) + 1} onChange={(_event: any, value: any) => dispatch(setPage(value))} />
             </Container>
         </div>
     );

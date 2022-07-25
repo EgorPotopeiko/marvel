@@ -1,0 +1,1 @@
+export const statePage = (state: any) => state.pagination.page;
