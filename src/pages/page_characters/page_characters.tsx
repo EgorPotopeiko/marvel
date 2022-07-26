@@ -26,7 +26,7 @@ const PageCharacters: FC = () => {
                 <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 16 }}>
                     {characters.map((character: any) => (
                         <Grid item xs={2} sm={4} md={4} key={character.id}>
-                            <CardPerson person={character} />
+                            <CardPerson data-testid="person_test-id" person={character} />
                         </Grid>
                     ))}
                 </Grid>
