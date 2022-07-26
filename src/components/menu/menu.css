@@ -8,16 +8,19 @@
   padding: 5px 0px;
 }
 .menu__item {
-  text-decoration: none;
-  text-transform: uppercase;
+  text-decoration: auto;
   font-family: "Poppins", sans-serif;
-  color: white;
   padding: 6px 10px;
   border-radius: 10px;
   transition: 0.3s all;
 }
 .menu__item:hover {
   background-color: black;
+}
+.menu__item-link {
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=menu.css.map */

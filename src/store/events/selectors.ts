@@ -1,0 +1,1 @@
+export const stateEvents = (state: any) => state.events.events;

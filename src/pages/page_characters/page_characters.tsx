@@ -1,7 +1,5 @@
 import React, {FC, useEffect, useState} from 'react';
 import './page_characters.scss';
-import Header from "../../components/header/header";
-import Menu from "../../components/menu/menu";
 import CardPerson from "../../components/cards/card_person/card";
 import {Container, Grid, Pagination} from "@mui/material";
 import Characters from "../../services/characters";
@@ -24,8 +22,6 @@ const PageCharacters: FC = () => {
     }, [getPage])
     return (
         <div className="page__characters">
-            <Header />
-            <Menu />
             <Container maxWidth='lg'>
                 <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 16 }}>
                     {characters.map((character: any) => (

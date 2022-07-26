@@ -1,7 +1,5 @@
 import React, {FC, useEffect} from 'react';
 import './page_comics.scss';
-import Header from "../../components/header/header";
-import Menu from "../../components/menu/menu";
 import {Container, Grid, Pagination} from "@mui/material";
 import Comics from "../../services/comics";
 import {useDispatch, useSelector} from "react-redux";
@@ -23,9 +21,7 @@ const PageComics: FC = () => {
             .then((data) => dispatch(getAllComicsAction(data.results)))
     }, [getPage])
     return (
-        <div className="page__characters">
-            <Header />
-            <Menu />
+        <div className="page__comics">
             <Container maxWidth='lg'>
                 <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 16 }}>
                     {comics.map((comics: any) => (
@@ -34,7 +30,7 @@ const PageComics: FC = () => {
                         </Grid>
                     ))}
                 </Grid>
-                <Pagination count={Math.floor(52644 / 20)} onChange={(_event: any, value: any) => dispatch(setPage(value))} />
+                <Pagination count={Math.floor(52644 / 20) + 1} onChange={(_event: any, value: any) => dispatch(setPage(value))} />
             </Container>
         </div>
     );

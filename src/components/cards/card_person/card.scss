@@ -1,10 +1,10 @@
 .card__person {
   .css-r40f8v-MuiTypography-root {
-    line-height: 20px;
-    white-space: break-spaces;
     overflow: hidden;
     text-overflow: ellipsis;
-    height: 105px;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
   }
   .css-h93ljk-MuiTypography-root {
     font-family: 'Courgette', cursive;
