@@ -6,8 +6,9 @@ import creatorsReducer from '../store/creators/reducer';
 import eventsReducer from '../store/events/reducer';
 import seriesReducer from '../store/series/reducer';
 import storiesReducer from '../store/stories/reducer';
+import { History } from 'history';
 
-const rootReducer = combineReducers({
+const rootReducer = (history: History) => combineReducers({
     characters: charactersReducer,
     pagination: paginationReducer,
     comics: comicsReducer,
