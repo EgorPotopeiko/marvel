@@ -1,3 +1,5 @@
 export const StoriesActionTypes = {
-    GET_ALL_STORIES: '[Stories] GET_ALL_STORIES'
+    GET_ALL_STORIES_START: '[Stories] GET_ALL_STORIES_START',
+    GET_ALL_STORIES_SUCCESS: '[Stories] GET_ALL_STORIES_SUCCESS',
+    GET_ALL_STORIES_ERROR: '[Stories] GET_ALL_STORIES_ERROR'
 }

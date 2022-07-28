@@ -4,31 +4,29 @@ import {Container, Grid, Pagination} from "@mui/material";
 import {useDispatch, useSelector} from "react-redux";
 import {statePage} from "../../store/pagination/selectors";
 import {setPage} from "../../store/pagination/actions";
-import Series from "../../services/series";
-import {getAllSeriesAction} from "../../store/series/actions";
-import {stateSeries} from "../../store/series/selectors";
+import {getAllSeriesStartAction} from "../../store/series/actions";
 import CardSeries from "../../components/cards/card_series/card";
+import {selectSeries} from "../../store/series/selectors";
+import Loader from "../../components/loader/loader";
 
-const {getAllSeries} = Series
 
 const PageSeries: FC = () => {
     const dispatch = useDispatch();
-    const series = useSelector(stateSeries);
+    const {series, isLoading} = useSelector(selectSeries);
     const getPage = useSelector(statePage);
     useEffect(() => {
-        getAllSeries(getPage - 1)
-            .then((res) => res.data.data)
-            .then((data) => dispatch(getAllSeriesAction(data.results)))
+        dispatch(getAllSeriesStartAction())
     }, [getPage])
     return (
         <div className="page__events">
             <Container maxWidth='lg'>
                 <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 16 }}>
-                    {series.map((series: any) => (
+                    {isLoading && (<Loader />)}
+                    {!isLoading && (series.map((series: any) => (
                         <Grid item xs={2} sm={4} md={4} key={series.id}>
                             <CardSeries series={series} />
                         </Grid>
-                    ))}
+                    )))}
                 </Grid>
                 <Pagination count={Math.floor(13033 / 20) + 1} onChange={(_event: any, value: any) => dispatch(setPage(value))} />
             </Container>

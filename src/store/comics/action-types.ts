@@ -1,3 +1,5 @@
 export const ComicsActionTypes = {
-    GET_ALL_COMICS: '[Comics] GET_ALL_COMICS'
+    GET_ALL_COMICS_START: '[Comics] GET_ALL_COMICS_START',
+    GET_ALL_COMICS_SUCCESS: '[Comics] GET_ALL_COMICS_SUCCESS',
+    GET_ALL_COMICS_ERROR: '[Comics] GET_ALL_COMICS_ERROR'
 }

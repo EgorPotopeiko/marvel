@@ -1,3 +1,5 @@
 export const EventsActionTypes = {
-    GET_ALL_EVENTS: '[Events] GET_ALL_EVENTS'
+    GET_ALL_EVENTS_START: '[Events] GET_ALL_EVENTS_START',
+    GET_ALL_EVENTS_SUCCESS: '[Events] GET_ALL_EVENTS_SUCCESS',
+    GET_ALL_EVENTS_ERROR: '[Events] GET_ALL_EVENTS_ERROR'
 }

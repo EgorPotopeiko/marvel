@@ -1,3 +1,5 @@
 export const SeriesActionTypes = {
-    GET_ALL_SERIES: '[Series] GET_ALL_SERIES'
+    GET_ALL_SERIES_START: '[Series] GET_ALL_SERIES_START',
+    GET_ALL_SERIES_SUCCESS: '[Series] GET_ALL_SERIES_SUCCESS',
+    GET_ALL_SERIES_ERROR: '[Series] GET_ALL_SERIES_ERROR'
 }
