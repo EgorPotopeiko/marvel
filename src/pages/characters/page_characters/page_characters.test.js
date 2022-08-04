@@ -4,8 +4,8 @@ import axios from "axios";
 import PageCharacters from "./page_characters";
 import {stateCharacters} from "./store/characters/selectors";
 import {BrowserRouter} from "react-router-dom";
-import {store} from "../../configureStore";
-import App from "../../App";
+import {store} from "../../../configureStore";
+import App from "../../../App";
 
 jest.mock('axios')
 

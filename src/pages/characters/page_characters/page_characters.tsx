@@ -1,13 +1,13 @@
 import React, {FC, useEffect} from 'react';
 import './page_characters.scss';
-import CardPerson from "../../components/cards/card_person/card";
+import CardPerson from "../../../components/cards/card_person/card";
 import {Container, Grid, Pagination} from "@mui/material";
-import {getAllCharactersStartAction} from "../../store/characters/actions";
+import {getAllCharactersStartAction} from "../../../store/characters/actions";
 import {useDispatch, useSelector} from "react-redux";
-import {selectCharacters} from "../../store/characters/selectors";
-import {statePage} from "../../store/pagination/selectors";
-import {setPage} from "../../store/pagination/actions";
-import Loader from "../../components/loader/loader";
+import {selectCharacters} from "../../../store/characters/selectors";
+import {statePage} from "../../../store/pagination/selectors";
+import {setPage} from "../../../store/pagination/actions";
+import Loader from "../../../components/loader/loader";
 
 const PageCharacters: FC = () => {
     const dispatch = useDispatch();
