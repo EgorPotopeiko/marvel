@@ -11,7 +11,7 @@ function* loadCharacter(payload: any) {
         const {payload: id} = payload;
         const { data }: AxiosResponse = yield call(Characters.getCharacter, id);
         const newData = data.data.results;
-        yield put(getCharacterSuccessAction(newData));
+        yield put(getCharacterSuccessAction(...newData));
     }
     catch (error) {yield put(getCharacterErrorAction(error))}
 }

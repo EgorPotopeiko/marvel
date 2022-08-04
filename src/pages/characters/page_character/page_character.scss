@@ -6,12 +6,33 @@
     &-header {
       display: flex;
       justify-content: space-between;
+      margin-bottom: 20px;
     }
     &-img {
       margin-right: 50px;
     }
     &-info {
       text-align: end;
+    }
+    &-resources {
+      display: flex;
+      justify-content: space-between;
+      grid-gap: 10px;
+    }
+    &-resource {
+      background-color: black;
+      color: white;
+      border: 1px solid black;
+      border-radius: 5px;
+      max-width: 450px;
+      width: 100%;
+      padding: 0px 10px;
+      .css-uls1yk-MuiDivider-root {
+        background-color: red;
+        width: 107%;
+        max-width: 360px;
+        margin-left: -9px;
+      }
     }
   }
 }
