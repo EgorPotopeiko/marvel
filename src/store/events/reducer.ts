@@ -1,8 +1,9 @@
-import {getAllEventsErrorAction, getAllEventsSuccessAction, getAllEventsStartAction} from "./actions";
+import {getAllEventsErrorAction, getAllEventsSuccessAction, getAllEventsStartAction, getEventErrorAction, getEventStartAction, getEventSuccessAction} from "./actions";
 import {createReducer} from "@reduxjs/toolkit";
 
 const initialState = {
     events: [],
+    event: {},
     loading: false,
     error: null
 }
@@ -16,6 +17,17 @@ export default createReducer(initialState, {
         state.loading = false
     },
     [getAllEventsErrorAction]: function (state: any, action: any) {
+        state.error = action.payload
+        state.loading = false
+    },
+    [getEventStartAction]: function (state: any, action: any) {
+        state.loading = true
+    },
+    [getEventSuccessAction]: function (state: any, action: any) {
+        state.event = action.payload
+        state.loading = false
+    },
+    [getEventErrorAction]: function (state: any, action: any) {
         state.error = action.payload
         state.loading = false
     }

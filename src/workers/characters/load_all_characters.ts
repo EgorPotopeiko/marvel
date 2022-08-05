@@ -1,7 +1,6 @@
 import {AxiosResponse} from "axios";
 import { call, select, put } from 'redux-saga/effects';
 import Characters from "../../services/characters";
-import {useSelector} from "react-redux";
 import {statePage} from "../../store/pagination/selectors";
 import {getAllCharactersErrorAction, getAllCharactersSuccessAction} from "../../store/characters/actions";
 
