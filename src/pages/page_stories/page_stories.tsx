@@ -17,7 +17,7 @@ const PageStories: FC = () => {
         dispatch(getAllStoriesStartAction())
     }, [getPage])
     return (
-        <div className="page__events">
+        <div className="page__stories">
             <Container maxWidth='lg'>
                 <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 16 }}>
                     {isLoading && (<Loader />)}

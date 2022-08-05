@@ -6,11 +6,12 @@ import {
     getComicSuccessAction
 } from "../../store/comics/actions";
 
-function* loadComic(id: any) {
+function* loadComic(payload: any) {
+    const {payload: id} = payload;
     try {
         const { data }: AxiosResponse = yield call(Comics.getComic, id);
         const newData = data.data.results;
-        yield put(getComicSuccessAction(newData));
+        yield put(getComicSuccessAction(...newData));
     }
     catch (error) {yield put(getComicErrorAction(error))}
 }

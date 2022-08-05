@@ -2,12 +2,12 @@ import React, {FC, useEffect} from 'react';
 import './page_comics.scss';
 import {Container, Grid, Pagination} from "@mui/material";
 import {useDispatch, useSelector} from "react-redux";
-import {statePage} from "../../store/pagination/selectors";
-import {setPage} from "../../store/pagination/actions";
-import CardComics from "../../components/cards/card_comics/card";
-import {getAllComicsStartAction} from "../../store/comics/actions";
-import {selectComics} from "../../store/comics/selectors";
-import Loader from "../../components/loader/loader";
+import {statePage} from "../../../store/pagination/selectors";
+import {setPage} from "../../../store/pagination/actions";
+import CardComics from "../../../components/cards/card_comics/card";
+import {getAllComicsStartAction} from "../../../store/comics/actions";
+import {selectComics} from "../../../store/comics/selectors";
+import Loader from "../../../components/loader/loader";
 
 const PageComics: FC = () => {
     const dispatch = useDispatch();
@@ -23,7 +23,7 @@ const PageComics: FC = () => {
                     {isLoading && (<Loader />)}
                     {!isLoading && (comics.map((comics: any) => (
                         <Grid item xs={2} sm={4} md={4} key={comics.id}>
-                            <CardComics comics={comics} />
+                            <CardComics comic={comics} />
                         </Grid>
                     )))}
                 </Grid>

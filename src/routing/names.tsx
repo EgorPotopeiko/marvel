@@ -2,6 +2,7 @@ export enum PUBLIC_PATH {
     CHARACTERS = '/characters',
     CHARACTER = '/characters/:id',
     COMICS = '/comics',
+    COMIC = '/comics/:id',
     CREATORS = '/creators',
     EVENTS = '/events',
     SERIES = '/series',
