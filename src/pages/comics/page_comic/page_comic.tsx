@@ -23,72 +23,84 @@ const PageComic: FC = () => {
                                     <Typography variant="body2" color="text.secondary">{comic.description}</Typography>
                                 </div>
                             </div>
-                            {/*<div className="comic__card-resources">*/}
-                            {/*    <div className="comic__card-resource">*/}
-                            {/*        <Typography align='center' gutterBottom variant="h6" component="div">Comics</Typography>*/}
-                            {/*        <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'black' }}>*/}
-                            {/*            {comic.ser.items.map((comics: any) => (*/}
-                            {/*                <>*/}
-                            {/*                    <ListItem*/}
-                            {/*                        key={comics}*/}
-                            {/*                        disableGutters*/}
-                            {/*                    >*/}
-                            {/*                        <ListItemText primary={comics.name} />*/}
-                            {/*                    </ListItem>*/}
-                            {/*                    <Divider variant="inset" component="li" />*/}
-                            {/*                </>*/}
-                            {/*            ))}*/}
-                            {/*        </List>*/}
-                            {/*    </div>*/}
-                            {/*    <div className="comic__card-resource">*/}
-                            {/*        <Typography align='center' gutterBottom variant="h6" component="div">Series</Typography>*/}
-                            {/*        <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'black' }}>*/}
-                            {/*            {character.series.items.map((series: any) => (*/}
-                            {/*                <>*/}
-                            {/*                    <ListItem*/}
-                            {/*                        key={series}*/}
-                            {/*                        disableGutters*/}
-                            {/*                    >*/}
-                            {/*                        <ListItemText primary={series.name} />*/}
-                            {/*                    </ListItem>*/}
-                            {/*                    <Divider variant="inset" component="li" />*/}
-                            {/*                </>*/}
-                            {/*            ))}*/}
-                            {/*        </List>*/}
-                            {/*    </div>*/}
-                            {/*    <div className="comic__card-resource">*/}
-                            {/*        <Typography align='center' gutterBottom variant="h6" component="div">Stories</Typography>*/}
-                            {/*        <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'black' }}>*/}
-                            {/*            {character.stories.items.map((stories: any) => (*/}
-                            {/*                <>*/}
-                            {/*                    <ListItem*/}
-                            {/*                        key={stories}*/}
-                            {/*                        disableGutters*/}
-                            {/*                    >*/}
-                            {/*                        <ListItemText primary={stories.name} />*/}
-                            {/*                    </ListItem>*/}
-                            {/*                    <Divider variant="inset" component="li" />*/}
-                            {/*                </>*/}
-                            {/*            ))}*/}
-                            {/*        </List>*/}
-                            {/*    </div>*/}
-                            {/*    <div className="comic__card-resource">*/}
-                            {/*        <Typography align='center' gutterBottom variant="h6" component="div">Events</Typography>*/}
-                            {/*        <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'black' }}>*/}
-                            {/*            {character.events.items.map((events: any) => (*/}
-                            {/*                <>*/}
-                            {/*                    <ListItem*/}
-                            {/*                        key={events}*/}
-                            {/*                        disableGutters*/}
-                            {/*                    >*/}
-                            {/*                        <ListItemText primary={events.name} />*/}
-                            {/*                    </ListItem>*/}
-                            {/*                    <Divider variant="inset" component="li" />*/}
-                            {/*                </>*/}
-                            {/*            ))}*/}
-                            {/*        </List>*/}
-                            {/*    </div>*/}
-                            {/*</div>*/}
+                            <div className="comic__card-resources">
+                                <div className="comic__card-resource">
+                                    <Typography align='center' gutterBottom variant="h6" component="div">Comics</Typography>
+                                    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
+                                                <ListItem
+                                                    key={comic.series}
+                                                    disableGutters
+                                                >
+                                                    <ListItemText primary={comic.series.name} />
+                                                </ListItem>
+                                                <Divider variant="inset" component="li" />
+                                    </List>
+                                </div>
+                                <div className="comic__card-resource">
+                                    <Typography align='center' gutterBottom variant="h6" component="div">Variants</Typography>
+                                    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
+                                        {comic.variants.map((variant: any) => (
+                                            <>
+                                                <ListItem
+                                                    key={variant}
+                                                    disableGutters
+                                                >
+                                                    <ListItemText primary={variant.name} />
+                                                </ListItem>
+                                                <Divider variant="inset" component="li" />
+                                            </>
+                                        ))}
+                                    </List>
+                                </div>
+                                <div className="comic__card-resource">
+                                    <Typography align='center' gutterBottom variant="h6" component="div">Creators</Typography>
+                                    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
+                                        {comic.creators.items.map((creator: any) => (
+                                            <>
+                                                <ListItem
+                                                    key={creator}
+                                                    disableGutters
+                                                >
+                                                    <ListItemText primary={creator.name} secondary={creator.role} />
+                                                </ListItem>
+                                                <Divider variant="inset" component="li" />
+                                            </>
+                                        ))}
+                                    </List>
+                                </div>
+                                <div className="comic__card-resource">
+                                    <Typography align='center' gutterBottom variant="h6" component="div">Characters</Typography>
+                                    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
+                                        {comic.characters.items.map((character: any) => (
+                                            <>
+                                                <ListItem
+                                                    key={character}
+                                                    disableGutters
+                                                >
+                                                    <ListItemText primary={character.name} />
+                                                </ListItem>
+                                                <Divider variant="inset" component="li" />
+                                            </>
+                                        ))}
+                                    </List>
+                                </div>
+                                <div className="comic__card-resource">
+                                    <Typography align='center' gutterBottom variant="h6" component="div">Stories</Typography>
+                                    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
+                                        {comic.stories.items.map((story: any) => (
+                                            <>
+                                                <ListItem
+                                                    key={story}
+                                                    disableGutters
+                                                >
+                                                    <ListItemText primary={story.name} />
+                                                </ListItem>
+                                                <Divider variant="inset" component="li" />
+                                            </>
+                                        ))}
+                                    </List>
+                                </div>
+                            </div>
                         </>
                     )}
                 </div>

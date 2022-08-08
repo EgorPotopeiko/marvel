@@ -2,12 +2,12 @@ import React, {FC, useEffect} from 'react';
 import './page_creators.scss';
 import {Container, Grid, Pagination} from "@mui/material";
 import {useDispatch, useSelector} from "react-redux";
-import {statePage} from "../../store/pagination/selectors";
-import {setPage} from "../../store/pagination/actions";
-import {getAllCreatorsStartAction} from "../../store/creators/actions";
-import CardCreators from "../../components/cards/card_creator/card";
-import {selectCreators} from "../../store/creators/selectors";
-import Loader from "../../components/loader/loader";
+import {statePage} from "../../../store/pagination/selectors";
+import {setPage} from "../../../store/pagination/actions";
+import {getAllCreatorsStartAction} from "../../../store/creators/actions";
+import CardCreators from "../../../components/cards/card_creator/card";
+import {selectCreators} from "../../../store/creators/selectors";
+import Loader from "../../../components/loader/loader";
 
 const PageCreators: FC = () => {
     const dispatch = useDispatch();
@@ -23,7 +23,7 @@ const PageCreators: FC = () => {
                     {isLoading && (<Loader />)}
                     {!isLoading && (creators.map((creator: any) => (
                         <Grid item xs={2} sm={4} md={4} key={creator.id}>
-                            <CardCreators creators={creator} />
+                            <CardCreators creator={creator} />
                         </Grid>
                     )))}
                 </Grid>

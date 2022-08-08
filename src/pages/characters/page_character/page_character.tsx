@@ -26,7 +26,7 @@ const PageCharacter: FC = () => {
                         <div className="character__card-resources">
                             <div className="character__card-resource">
                                 <Typography align='center' gutterBottom variant="h6" component="div">Comics</Typography>
-                                <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'black' }}>
+                                <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
                                     {character.comics.items.map((comics: any) => (
                                         <>
                                             <ListItem
@@ -42,7 +42,7 @@ const PageCharacter: FC = () => {
                             </div>
                             <div className="character__card-resource">
                                 <Typography align='center' gutterBottom variant="h6" component="div">Series</Typography>
-                                <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'black' }}>
+                                <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
                                     {character.series.items.map((series: any) => (
                                         <>
                                             <ListItem
@@ -58,7 +58,7 @@ const PageCharacter: FC = () => {
                             </div>
                             <div className="character__card-resource">
                                 <Typography align='center' gutterBottom variant="h6" component="div">Stories</Typography>
-                                <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'black' }}>
+                                <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
                                     {character.stories.items.map((stories: any) => (
                                         <>
                                             <ListItem
@@ -74,7 +74,7 @@ const PageCharacter: FC = () => {
                             </div>
                             <div className="character__card-resource">
                                 <Typography align='center' gutterBottom variant="h6" component="div">Events</Typography>
-                                <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'black' }}>
+                                <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
                                     {character.events.items.map((events: any) => (
                                         <>
                                             <ListItem

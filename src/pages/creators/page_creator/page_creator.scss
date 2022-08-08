@@ -1,5 +1,5 @@
-.page__comic {
-  .comic__card {
+.page__creator {
+  .creator__card {
     background-color: white;
     border-radius: 10px;
     padding: 10px 15px;
@@ -15,14 +15,14 @@
       text-align: end;
     }
     &-resources {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-gap: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      grid-gap: 10px;
     }
     &-resource {
       border: 2px solid black;
       border-radius: 5px;
-      max-width: 340px;
+      max-width: 450px;
       width: 100%;
       padding: 0px 10px;
       .css-uls1yk-MuiDivider-root {
