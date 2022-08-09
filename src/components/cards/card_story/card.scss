@@ -1,9 +1,16 @@
-.card__stories {
+.card__story {
   .css-h93ljk-MuiTypography-root {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+  }
+  .css-h93ljk-MuiTypography-root {
+    font-family: 'Courgette', cursive;
+  }
+  a {
+    text-decoration: none;
+    color: black;
   }
 }

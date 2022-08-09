@@ -6,6 +6,9 @@ export enum PUBLIC_PATH {
     CREATORS = '/creators',
     CREATOR = '/creators/:id',
     EVENTS = '/events',
+    EVENT = '/events/:id',
     SERIES = '/series',
-    STORIES = '/stories'
+    SERIES_ONE = '/series/:id',
+    STORIES = '/stories',
+    STORY = '/stories/:id'
 }

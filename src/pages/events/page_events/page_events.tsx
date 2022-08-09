@@ -2,12 +2,12 @@ import React, {FC, useEffect} from 'react';
 import './page_events.scss';
 import {Container, Grid, Pagination} from "@mui/material";
 import {useDispatch, useSelector} from "react-redux";
-import {statePage} from "../../store/pagination/selectors";
-import {setPage} from "../../store/pagination/actions";
-import {getAllEventsStartAction} from "../../store/events/actions";
-import CardEvents from "../../components/cards/card_event/card";
-import {selectEvents} from "../../store/events/selectors";
-import Loader from "../../components/loader/loader";
+import {statePage} from "../../../store/pagination/selectors";
+import {setPage} from "../../../store/pagination/actions";
+import {getAllEventsStartAction} from "../../../store/events/actions";
+import CardEvents from "../../../components/cards/card_event/card";
+import {selectEvents} from "../../../store/events/selectors";
+import Loader from "../../../components/loader/loader";
 
 
 const PageEvents: FC = () => {
@@ -24,7 +24,7 @@ const PageEvents: FC = () => {
                     {isLoading && (<Loader />)}
                     {!isLoading && (events.map((event: any) => (
                         <Grid item xs={2} sm={4} md={4} key={event.id}>
-                            <CardEvents events={event} />
+                            <CardEvents event={event} />
                         </Grid>
                     )))}
                 </Grid>

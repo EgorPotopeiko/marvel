@@ -6,11 +6,12 @@ import {
     getEventSuccessAction
 } from "../../store/events/actions";
 
-function* loadEvent(id: any) {
+function* loadEvent(payload: any) {
+    const {payload: id} = payload;
     try {
         const { data }: AxiosResponse = yield call(Events.getEvent, id);
         const newData = data.data.results;
-        yield put(getEventSuccessAction(newData));
+        yield put(getEventSuccessAction(...newData));
     }
     catch (error) {yield put(getEventErrorAction(error))}
 }

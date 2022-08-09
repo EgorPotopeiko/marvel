@@ -2,12 +2,12 @@ import React, {FC, useEffect} from 'react';
 import './page_series.scss';
 import {Container, Grid, Pagination} from "@mui/material";
 import {useDispatch, useSelector} from "react-redux";
-import {statePage} from "../../store/pagination/selectors";
-import {setPage} from "../../store/pagination/actions";
-import {getAllSeriesStartAction} from "../../store/series/actions";
-import CardSeries from "../../components/cards/card_series/card";
-import {selectSeries} from "../../store/series/selectors";
-import Loader from "../../components/loader/loader";
+import {statePage} from "../../../store/pagination/selectors";
+import {setPage} from "../../../store/pagination/actions";
+import {getAllSeriesStartAction} from "../../../store/series/actions";
+import CardSeries from "../../../components/cards/card_series/card";
+import {selectSeries} from "../../../store/series/selectors";
+import Loader from "../../../components/loader/loader";
 
 const PageSeries: FC = () => {
     const dispatch = useDispatch();

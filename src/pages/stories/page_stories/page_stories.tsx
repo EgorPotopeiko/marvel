@@ -2,12 +2,12 @@ import React, {FC, useEffect} from 'react';
 import './page_stories.scss';
 import {Container, Grid, Pagination} from "@mui/material";
 import {useDispatch, useSelector} from "react-redux";
-import {statePage} from "../../store/pagination/selectors";
-import {setPage} from "../../store/pagination/actions";
-import {getAllStoriesStartAction} from "../../store/stories/actions";
-import {selectStories} from "../../store/stories/selectors";
-import CardStories from "../../components/cards/card_story/card";
-import Loader from "../../components/loader/loader";
+import {statePage} from "../../../store/pagination/selectors";
+import {setPage} from "../../../store/pagination/actions";
+import {getAllStoriesStartAction} from "../../../store/stories/actions";
+import {selectStories} from "../../../store/stories/selectors";
+import CardStories from "../../../components/cards/card_story/card";
+import Loader from "../../../components/loader/loader";
 
 const PageStories: FC = () => {
     const dispatch = useDispatch();
