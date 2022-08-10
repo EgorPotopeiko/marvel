@@ -6,6 +6,7 @@ import creatorsReducer from '../store/creators/reducer';
 import eventsReducer from '../store/events/reducer';
 import seriesReducer from '../store/series/reducer';
 import storiesReducer from '../store/stories/reducer';
+import searchReducer from '../store/search/reducer';
 import { History } from 'history';
 
 const rootReducer = (history: History) => combineReducers({
@@ -15,7 +16,8 @@ const rootReducer = (history: History) => combineReducers({
     creators: creatorsReducer,
     events: eventsReducer,
     series: seriesReducer,
-    stories: storiesReducer
+    stories: storiesReducer,
+    search: searchReducer
 })
 
 export default rootReducer

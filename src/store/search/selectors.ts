@@ -1,0 +1,1 @@
+export const stateSearch = (state: any) => state.search.search;
