@@ -4,6 +4,7 @@ import {createReducer} from "@reduxjs/toolkit";
 const initialState = {
     comics: [],
     comic: {},
+    total: 1,
     loading: false,
     error: null
 }

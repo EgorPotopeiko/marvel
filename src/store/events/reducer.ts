@@ -4,6 +4,7 @@ import {createReducer} from "@reduxjs/toolkit";
 const initialState = {
     events: [],
     event: {},
+    total: 1,
     loading: false,
     error: null
 }

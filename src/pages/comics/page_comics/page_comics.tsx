@@ -2,7 +2,7 @@ import React, {FC, useEffect} from 'react';
 import './page_comics.scss';
 import {Container, Grid, Pagination} from "@mui/material";
 import {useDispatch, useSelector} from "react-redux";
-import {statePage} from "../../../store/pagination/selectors";
+import {statePage, stateTotal} from "../../../store/pagination/selectors";
 import {setPage} from "../../../store/pagination/actions";
 import CardComics from "../../../components/cards/card_comics/card";
 import {getAllComicsStartAction} from "../../../store/comics/actions";
@@ -12,6 +12,7 @@ import Loader from "../../../components/loader/loader";
 const PageComics: FC = () => {
     const dispatch = useDispatch();
     const {comics, isLoading} = useSelector(selectComics);
+    const total = useSelector(stateTotal);
     const getPage = useSelector(statePage);
     useEffect(() => {
         dispatch(getAllComicsStartAction())
@@ -27,7 +28,7 @@ const PageComics: FC = () => {
                         </Grid>
                     )))}
                 </Grid>
-                <Pagination page={getPage} count={Math.floor(52644 / 20) + 1} onChange={(_event: any, value: any) => dispatch(setPage(value))} />
+                <Pagination page={getPage} count={Math.floor(total / 20) + 1} onChange={(_event: any, value: any) => dispatch(setPage(value))} />
             </Container>
         </div>
     );

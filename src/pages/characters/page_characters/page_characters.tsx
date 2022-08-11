@@ -5,13 +5,14 @@ import {Container, Grid, Pagination} from "@mui/material";
 import {getAllCharactersStartAction} from "../../../store/characters/actions";
 import {useDispatch, useSelector} from "react-redux";
 import {selectCharacters} from "../../../store/characters/selectors";
-import {statePage} from "../../../store/pagination/selectors";
+import {statePage, stateTotal} from "../../../store/pagination/selectors";
 import {setPage} from "../../../store/pagination/actions";
 import Loader from "../../../components/loader/loader";
 
 const PageCharacters: FC = () => {
     const dispatch = useDispatch();
     const {characters, isLoading} = useSelector(selectCharacters);
+    const total = useSelector(stateTotal);
     const getPage = useSelector(statePage);
     useEffect(() => {
         dispatch(getAllCharactersStartAction())
@@ -27,7 +28,7 @@ const PageCharacters: FC = () => {
                         </Grid>
                     )))}
                 </Grid>
-                <Pagination page={getPage} count={Math.floor(1562 / 20) + 1} onChange={(_event: any, value: any) => dispatch(setPage(value))} />
+                <Pagination page={getPage} count={Math.floor(total / 20) + 1} onChange={(_event: any, value: any) => dispatch(setPage(value))} />
             </Container>
         </div>
     );

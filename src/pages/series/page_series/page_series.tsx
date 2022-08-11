@@ -2,7 +2,7 @@ import React, {FC, useEffect} from 'react';
 import './page_series.scss';
 import {Container, Grid, Pagination} from "@mui/material";
 import {useDispatch, useSelector} from "react-redux";
-import {statePage} from "../../../store/pagination/selectors";
+import {statePage, stateTotal} from "../../../store/pagination/selectors";
 import {setPage} from "../../../store/pagination/actions";
 import {getAllSeriesStartAction} from "../../../store/series/actions";
 import CardSeries from "../../../components/cards/card_series/card";
@@ -12,6 +12,7 @@ import Loader from "../../../components/loader/loader";
 const PageSeries: FC = () => {
     const dispatch = useDispatch();
     const {series, isLoading} = useSelector(selectSeries);
+    const total = useSelector(stateTotal);
     const getPage = useSelector(statePage);
     useEffect(() => {
         dispatch(getAllSeriesStartAction())
@@ -27,7 +28,7 @@ const PageSeries: FC = () => {
                         </Grid>
                     )))}
                 </Grid>
-                <Pagination page={getPage} count={Math.floor(13033 / 20) + 1} onChange={(_event: any, value: any) => dispatch(setPage(value))} />
+                <Pagination page={getPage} count={Math.floor(total / 20) + 1} onChange={(_event: any, value: any) => dispatch(setPage(value))} />
             </Container>
         </div>
     );
