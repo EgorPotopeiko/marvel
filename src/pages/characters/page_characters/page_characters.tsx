@@ -8,6 +8,7 @@ import {selectCharacters} from "../../../store/characters/selectors";
 import {statePage, stateTotal} from "../../../store/pagination/selectors";
 import {setPage} from "../../../store/pagination/actions";
 import Loader from "../../../components/loader/loader";
+import {TCharacter} from "../../../models/character";
 
 const PageCharacters: FC = () => {
     const dispatch = useDispatch();
@@ -22,7 +23,7 @@ const PageCharacters: FC = () => {
             <Container maxWidth='lg'>
                 <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 16 }}>
                     {isLoading && (<Loader />)}
-                    {!isLoading && (characters.map((character: any) => (
+                    {!isLoading && (characters.map((character: TCharacter) => (
                         <Grid item xs={2} sm={4} md={4} key={character.id}>
                             <CardPerson data-testid="person_test-id" person={character} />
                         </Grid>

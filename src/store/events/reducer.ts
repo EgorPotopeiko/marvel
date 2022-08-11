@@ -5,16 +5,16 @@ import {TEvent} from "../../models/event";
 
 const initialState = {
     events: [],
-    event: {},
+    event: null,
     loading: false,
     error: null
 }
 
 type ActionTypes = ReturnType<InferValueTypes<typeof actions>>
 
-export type TInitialState = {
+export type TEventState = {
     events: Array<TEvent>,
-    event: TEvent | {},
+    event: TEvent | null,
     loading: boolean,
     error: any
 }
@@ -22,25 +22,25 @@ export type TInitialState = {
 const {getAllEventsErrorAction, getAllEventsSuccessAction, getAllEventsStartAction, getEventErrorAction, getEventStartAction, getEventSuccessAction} = actions;
 
 export default createReducer(initialState, {
-    [getAllEventsStartAction]: function (state: TInitialState) {
+    [getAllEventsStartAction]: function (state: TEventState) {
         state.loading = true
     },
-    [getAllEventsSuccessAction]: function (state: TInitialState, action: ActionTypes) {
+    [getAllEventsSuccessAction]: function (state: TEventState, action: ActionTypes) {
         state.events = action.payload
         state.loading = false
     },
-    [getAllEventsErrorAction]: function (state: TInitialState, action: ActionTypes) {
+    [getAllEventsErrorAction]: function (state: TEventState, action: ActionTypes) {
         state.error = action.payload
         state.loading = false
     },
-    [getEventStartAction]: function (state: TInitialState) {
+    [getEventStartAction]: function (state: TEventState) {
         state.loading = true
     },
-    [getEventSuccessAction]: function (state: TInitialState, action: ActionTypes) {
+    [getEventSuccessAction]: function (state: TEventState, action: ActionTypes) {
         state.event = action.payload
         state.loading = false
     },
-    [getEventErrorAction]: function (state: TInitialState, action: ActionTypes) {
+    [getEventErrorAction]: function (state: TEventState, action: ActionTypes) {
         state.error = action.payload
         state.loading = false
     }

@@ -5,16 +5,16 @@ import {TStory} from "../../models/story";
 
 const initialState = {
     stories: [],
-    story: {},
+    story: null,
     loading: false,
     error: null
 }
 
 type ActionTypes = ReturnType<InferValueTypes<typeof actions>>
 
-export type TInitialState = {
+export type TStoriesState = {
     stories: Array<TStory>,
-    story: TStory | {},
+    story: TStory | null,
     loading: boolean,
     error: any
 }
@@ -22,25 +22,25 @@ export type TInitialState = {
 const {getAllStoriesStartAction, getAllStoriesSuccessAction, getAllStoriesErrorAction, getStoryErrorAction, getStoryStartAction, getStorySuccessAction} = actions;
 
 export default createReducer(initialState, {
-    [getAllStoriesStartAction]: function (state: TInitialState) {
+    [getAllStoriesStartAction]: function (state: TStoriesState) {
         state.loading = true
     },
-    [getAllStoriesSuccessAction]: function (state: TInitialState, action: ActionTypes) {
+    [getAllStoriesSuccessAction]: function (state: TStoriesState, action: ActionTypes) {
         state.stories = action.payload
         state.loading = false
     },
-    [getAllStoriesErrorAction]: function (state: TInitialState, action: ActionTypes) {
+    [getAllStoriesErrorAction]: function (state: TStoriesState, action: ActionTypes) {
         state.error = action.payload
         state.loading = false
     },
-    [getStoryStartAction]: function (state: TInitialState) {
+    [getStoryStartAction]: function (state: TStoriesState) {
         state.loading = true
     },
-    [getStorySuccessAction]: function (state: TInitialState, action: ActionTypes) {
+    [getStorySuccessAction]: function (state: TStoriesState, action: ActionTypes) {
         state.story = action.payload
         state.loading = false
     },
-    [getStoryErrorAction]: function (state: TInitialState, action: ActionTypes) {
+    [getStoryErrorAction]: function (state: TStoriesState, action: ActionTypes) {
         state.error = action.payload
         state.loading = false
     }

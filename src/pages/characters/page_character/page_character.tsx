@@ -16,18 +16,18 @@ const PageCharacter: FC = () => {
                         <>
                         <div className="character__card-header">
                             <div className="character__card-img">
-                                <img alt='#' src={character.thumbnail.path + `/standard_fantastic.jpg`} />
+                                <img alt='#' src={character!.thumbnail.path + `/standard_fantastic.jpg`} />
                             </div>
                             <div className="character__card-info">
-                                <Typography gutterBottom variant="h5" component="div">{character.name}</Typography>
-                                <Typography variant="body2" color="text.secondary">{character.description}</Typography>
+                                <Typography gutterBottom variant="h5" component="div">{character!.name}</Typography>
+                                <Typography variant="body2" color="text.secondary">{character!.description}</Typography>
                             </div>
                         </div>
                         <div className="character__card-resources">
                             <div className="character__card-resource">
                                 <Typography align='center' gutterBottom variant="h6" component="div">Comics</Typography>
                                 <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                    {character.comics.items.map((comics: any) => (
+                                    {character!.comics.items.map((comics: any) => (
                                         <>
                                             <ListItem
                                             key={comics}
@@ -43,7 +43,7 @@ const PageCharacter: FC = () => {
                             <div className="character__card-resource">
                                 <Typography align='center' gutterBottom variant="h6" component="div">Series</Typography>
                                 <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                    {character.series.items.map((series: any) => (
+                                    {character!.series.items.map((series: any) => (
                                         <>
                                             <ListItem
                                             key={series}
@@ -59,7 +59,7 @@ const PageCharacter: FC = () => {
                             <div className="character__card-resource">
                                 <Typography align='center' gutterBottom variant="h6" component="div">Stories</Typography>
                                 <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                    {character.stories.items.map((stories: any) => (
+                                    {character!.stories.items.map((stories: any) => (
                                         <>
                                             <ListItem
                                             key={stories}
@@ -75,7 +75,7 @@ const PageCharacter: FC = () => {
                             <div className="character__card-resource">
                                 <Typography align='center' gutterBottom variant="h6" component="div">Events</Typography>
                                 <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                    {character.events.items.map((events: any) => (
+                                    {character!.events.items.map((events: any) => (
                                         <>
                                             <ListItem
                                             key={events}

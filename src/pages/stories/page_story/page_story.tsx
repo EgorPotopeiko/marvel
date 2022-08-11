@@ -16,18 +16,18 @@ const PageStory: FC = () => {
                         <>
                             <div className="story__card-header">
                                 <div className="story__card-img">
-                                    <img alt='#' src={story.thumbnail ? story.thumbnail.path + `/standard_fantastic.jpg` : undefined} />
+                                    <img alt='#' src={story!.thumbnail ? story!.thumbnail.path + `/standard_fantastic.jpg` : undefined} />
                                 </div>
                                 <div className="story__card-info">
-                                    <Typography gutterBottom variant="h5" component="div">{story.title}</Typography>
-                                    <Typography variant="body2" color="text.secondary">{story.description}</Typography>
+                                    <Typography gutterBottom variant="h5" component="div">{story!.title}</Typography>
+                                    <Typography variant="body2" color="text.secondary">{story!.description}</Typography>
                                 </div>
                             </div>
                             <div className="story__card-resources">
                                 <div className="story__card-resource">
                                     <Typography align='center' gutterBottom variant="h6" component="div">Creators</Typography>
                                     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                        {story.creators.items.map((creator: any) => (
+                                        {story!.creators.items.map((creator: any) => (
                                             <>
                                                 <ListItem
                                                     key={creator}
@@ -43,7 +43,7 @@ const PageStory: FC = () => {
                                 <div className="story__card-resource">
                                     <Typography align='center' gutterBottom variant="h6" component="div">Characters</Typography>
                                     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                        {story.characters.items.map((character: any) => (
+                                        {story!.characters.items.map((character: any) => (
                                             <>
                                                 <ListItem
                                                     key={character}
@@ -59,7 +59,7 @@ const PageStory: FC = () => {
                                 <div className="story__card-resource">
                                     <Typography align='center' gutterBottom variant="h6" component="div">Series</Typography>
                                     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                        {story.series.items.map((series: any) => (
+                                        {story!.series.items.map((series: any) => (
                                             <>
                                                 <ListItem
                                                     key={series}
@@ -75,7 +75,7 @@ const PageStory: FC = () => {
                                 <div className="story__card-resource">
                                     <Typography align='center' gutterBottom variant="h6" component="div">Comics</Typography>
                                     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                        {story.comics.items.map((comic: any) => (
+                                        {story!.comics.items.map((comic: any) => (
                                             <>
                                                 <ListItem
                                                     key={comic}
@@ -91,7 +91,7 @@ const PageStory: FC = () => {
                                 <div className="story__card-resource">
                                     <Typography align='center' gutterBottom variant="h6" component="div">Events</Typography>
                                     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                        {story.events.items.map((event: any) => (
+                                        {story!.events.items.map((event: any) => (
                                             <>
                                                 <ListItem
                                                     key={event}

@@ -5,16 +5,16 @@ import {TCreator} from "../../models/creator";
 
 const initialState = {
     creators: [],
-    creator: {},
+    creator: null,
     loading: false,
     error: null
 }
 
 type ActionTypes = ReturnType<InferValueTypes<typeof actions>>
 
-export type TInitialState = {
+export type TCreatorState = {
     creators: Array<TCreator>,
-    creator: TCreator | {},
+    creator: TCreator | null,
     loading: boolean,
     error: any
 }
@@ -22,25 +22,25 @@ export type TInitialState = {
 const {getAllCreatorsStartAction, getAllCreatorsSuccessAction, getAllCreatorsErrorAction, getCreatorErrorAction, getCreatorStartAction, getCreatorSuccessAction} = actions;
 
 export default createReducer(initialState, {
-    [getAllCreatorsStartAction]: function (state: TInitialState) {
+    [getAllCreatorsStartAction]: function (state: TCreatorState) {
         state.loading = true
     },
-    [getAllCreatorsSuccessAction]: function (state: TInitialState, action: ActionTypes) {
+    [getAllCreatorsSuccessAction]: function (state: TCreatorState, action: ActionTypes) {
         state.creators = action.payload
         state.loading = false
     },
-    [getAllCreatorsErrorAction]: function (state: TInitialState, action: ActionTypes) {
+    [getAllCreatorsErrorAction]: function (state: TCreatorState, action: ActionTypes) {
         state.error = action.payload
         state.loading = false
     },
-    [getCreatorStartAction]: function (state: TInitialState) {
+    [getCreatorStartAction]: function (state: TCreatorState) {
         state.loading = true
     },
-    [getCreatorSuccessAction]: function (state: TInitialState, action: ActionTypes) {
+    [getCreatorSuccessAction]: function (state: TCreatorState, action: ActionTypes) {
         state.creator = action.payload
         state.loading = false
     },
-    [getCreatorErrorAction]: function (state: TInitialState, action: ActionTypes) {
+    [getCreatorErrorAction]: function (state: TCreatorState, action: ActionTypes) {
         state.error = action.payload
         state.loading = false
     }

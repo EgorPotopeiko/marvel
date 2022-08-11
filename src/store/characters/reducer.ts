@@ -5,16 +5,16 @@ import {InferValueTypes} from "../../models/common";
 
 const initialState = {
     characters: [],
-    character: {},
+    character: null,
     loading: false,
     error: null
 }
 
 type ActionTypes = ReturnType<InferValueTypes<typeof actions>>
 
-export type TInitialState = {
+export type TCharacterState = {
     characters: Array<TCharacter>,
-    character: TCharacter | {},
+    character: TCharacter | null,
     loading: boolean,
     error: any
 }
@@ -22,25 +22,25 @@ export type TInitialState = {
 const {getAllCharactersStartAction, getAllCharactersSuccessAction, getAllCharactersErrorAction, getCharacterErrorAction, getCharacterStartAction, getCharacterSuccessAction} = actions;
 
 export default createReducer(initialState, {
-    [getAllCharactersStartAction]: function (state: TInitialState) {
+    [getAllCharactersStartAction]: function (state: TCharacterState) {
         state.loading = true
     },
-    [getAllCharactersSuccessAction]: function (state: TInitialState, action: ActionTypes) {
+    [getAllCharactersSuccessAction]: function (state: TCharacterState, action: ActionTypes) {
         state.characters = action.payload
         state.loading = false
     },
-    [getAllCharactersErrorAction]: function (state: TInitialState, action: ActionTypes) {
+    [getAllCharactersErrorAction]: function (state: TCharacterState, action: ActionTypes) {
         state.error = action.payload
         state.loading = false
     },
-    [getCharacterStartAction]: function (state: TInitialState) {
+    [getCharacterStartAction]: function (state: TCharacterState) {
         state.loading = true
     },
-    [getCharacterSuccessAction]: function (state: TInitialState, action: ActionTypes) {
+    [getCharacterSuccessAction]: function (state: TCharacterState, action: ActionTypes) {
         state.character = action.payload
         state.loading = false
     },
-    [getCharacterErrorAction]: function (state: TInitialState, action: ActionTypes) {
+    [getCharacterErrorAction]: function (state: TCharacterState, action: ActionTypes) {
         state.error = action.payload
         state.loading = false
     }

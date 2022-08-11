@@ -5,16 +5,16 @@ import {TSeries} from "../../models/series";
 
 const initialState = {
     series: [],
-    select_series: {},
+    select_series: null,
     loading: false,
     error: null
 }
 
 type ActionTypes = ReturnType<InferValueTypes<typeof actions>>
 
-export type TInitialState = {
+export type TSeriesState = {
     series: Array<TSeries>,
-    select_series: TSeries | {},
+    select_series: TSeries | null,
     loading: boolean,
     error: any
 }
@@ -22,25 +22,25 @@ export type TInitialState = {
 const {getAllSeriesErrorAction, getAllSeriesSuccessAction, getAllSeriesStartAction, getSeriesErrorAction, getSeriesStartAction, getSeriesSuccessAction} = actions
 
 export default createReducer(initialState, {
-    [getAllSeriesStartAction]: function (state: TInitialState) {
+    [getAllSeriesStartAction]: function (state: TSeriesState) {
         state.loading = true
     },
-    [getAllSeriesSuccessAction]: function (state: TInitialState, action: ActionTypes) {
+    [getAllSeriesSuccessAction]: function (state: TSeriesState, action: ActionTypes) {
         state.series = action.payload
         state.loading = false
     },
-    [getAllSeriesErrorAction]: function (state: TInitialState, action: ActionTypes) {
+    [getAllSeriesErrorAction]: function (state: TSeriesState, action: ActionTypes) {
         state.error = action.payload
         state.loading = false
     },
-    [getSeriesStartAction]: function (state: TInitialState) {
+    [getSeriesStartAction]: function (state: TSeriesState) {
         state.loading = true
     },
-    [getSeriesSuccessAction]: function (state: TInitialState, action: ActionTypes) {
+    [getSeriesSuccessAction]: function (state: TSeriesState, action: ActionTypes) {
         state.select_series = action.payload
         state.loading = false
     },
-    [getSeriesErrorAction]: function (state: TInitialState, action: ActionTypes) {
+    [getSeriesErrorAction]: function (state: TSeriesState, action: ActionTypes) {
         state.error = action.payload
         state.loading = false
     }

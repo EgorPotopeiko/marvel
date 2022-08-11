@@ -16,11 +16,11 @@ const PageComic: FC = () => {
                         <>
                             <div className="comic__card-header">
                                 <div className="comic__card-img">
-                                    <img alt='#' src={comic.thumbnail.path + `/standard_fantastic.jpg`} />
+                                    <img alt='#' src={comic!.thumbnail.path + `/standard_fantastic.jpg`} />
                                 </div>
                                 <div className="comic__card-info">
-                                    <Typography gutterBottom variant="h5" component="div">{comic.title}</Typography>
-                                    <Typography variant="body2" color="text.secondary">{comic.description}</Typography>
+                                    <Typography gutterBottom variant="h5" component="div">{comic!.title}</Typography>
+                                    <Typography variant="body2" color="text.secondary">{comic!.description}</Typography>
                                 </div>
                             </div>
                             <div className="comic__card-resources">
@@ -28,10 +28,10 @@ const PageComic: FC = () => {
                                     <Typography align='center' gutterBottom variant="h6" component="div">Comics</Typography>
                                     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
                                                 <ListItem
-                                                    key={comic.series}
+                                                    key={Math.random()}
                                                     disableGutters
                                                 >
-                                                    <ListItemText primary={comic.series.name} />
+                                                    <ListItemText primary={comic!.series.name} />
                                                 </ListItem>
                                                 <Divider variant="inset" component="li" />
                                     </List>
@@ -39,7 +39,7 @@ const PageComic: FC = () => {
                                 <div className="comic__card-resource">
                                     <Typography align='center' gutterBottom variant="h6" component="div">Variants</Typography>
                                     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                        {comic.variants.map((variant: any) => (
+                                        {comic!.variants.map((variant: any) => (
                                             <>
                                                 <ListItem
                                                     key={variant}
@@ -55,7 +55,7 @@ const PageComic: FC = () => {
                                 <div className="comic__card-resource">
                                     <Typography align='center' gutterBottom variant="h6" component="div">Creators</Typography>
                                     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                        {comic.creators.items.map((creator: any) => (
+                                        {comic!.creators.items.map((creator: any) => (
                                             <>
                                                 <ListItem
                                                     key={creator}
@@ -71,7 +71,7 @@ const PageComic: FC = () => {
                                 <div className="comic__card-resource">
                                     <Typography align='center' gutterBottom variant="h6" component="div">Characters</Typography>
                                     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                        {comic.characters.items.map((character: any) => (
+                                        {comic!.characters.items.map((character: any) => (
                                             <>
                                                 <ListItem
                                                     key={character}
@@ -87,7 +87,7 @@ const PageComic: FC = () => {
                                 <div className="comic__card-resource">
                                     <Typography align='center' gutterBottom variant="h6" component="div">Stories</Typography>
                                     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                        {comic.stories.items.map((story: any) => (
+                                        {comic!.stories.items.map((story: any) => (
                                             <>
                                                 <ListItem
                                                     key={story}

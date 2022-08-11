@@ -16,17 +16,17 @@ const PageCreator: FC = () => {
                         <>
                             <div className="creator__card-header">
                                 <div className="creator__card-img">
-                                    <img alt='#' src={creator.thumbnail.path + `/standard_fantastic.jpg`} />
+                                    <img alt='#' src={creator!.thumbnail.path + `/standard_fantastic.jpg`} />
                                 </div>
                                 <div className="creator__card-info">
-                                    <Typography gutterBottom variant="h5" component="div">{creator.fullName}</Typography>
+                                    <Typography gutterBottom variant="h5" component="div">{creator!.fullName}</Typography>
                                 </div>
                             </div>
                             <div className="creator__card-resources">
                                 <div className="creator__card-resource">
                                     <Typography align='center' gutterBottom variant="h6" component="div">Creators</Typography>
                                     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                        {creator.comics.items.map((comic: any) => (
+                                        {creator!.comics.items.map((comic: any) => (
                                             <>
                                                 <ListItem
                                                     key={comic}
@@ -42,7 +42,7 @@ const PageCreator: FC = () => {
                                 <div className="creator__card-resource">
                                     <Typography align='center' gutterBottom variant="h6" component="div">Series</Typography>
                                     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                        {creator.series.items.map((series: any) => (
+                                        {creator!.series.items.map((series: any) => (
                                             <>
                                                 <ListItem
                                                     key={series}
@@ -58,7 +58,7 @@ const PageCreator: FC = () => {
                                 <div className="creator__card-resource">
                                     <Typography align='center' gutterBottom variant="h6" component="div">Stories</Typography>
                                     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                        {creator.stories.items.map((story: any) => (
+                                        {creator!.stories.items.map((story: any) => (
                                             <>
                                                 <ListItem
                                                     key={story}
@@ -74,7 +74,7 @@ const PageCreator: FC = () => {
                                 <div className="creator__card-resource">
                                     <Typography align='center' gutterBottom variant="h6" component="div">Events</Typography>
                                     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                        {creator.events.items.map((event: any) => (
+                                        {creator!.events.items.map((event: any) => (
                                             <>
                                                 <ListItem
                                                     key={event}

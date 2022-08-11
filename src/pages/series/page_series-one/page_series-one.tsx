@@ -16,18 +16,18 @@ const PageSeriesOne: FC = () => {
                         <>
                             <div className="singleSeries__card-header">
                                 <div className="singleSeries__card-img">
-                                    <img alt='#' src={select_series.thumbnail.path + `/standard_fantastic.jpg`} />
+                                    <img alt='#' src={select_series!.thumbnail.path + `/standard_fantastic.jpg`} />
                                 </div>
                                 <div className="singleSeries__card-info">
-                                    <Typography gutterBottom variant="h5" component="div">{select_series.title}</Typography>
-                                    <Typography variant="body2" color="text.secondary">{select_series.description}</Typography>
+                                    <Typography gutterBottom variant="h5" component="div">{select_series!.title}</Typography>
+                                    <Typography variant="body2" color="text.secondary">{select_series!.description}</Typography>
                                 </div>
                             </div>
                             <div className="singleSeries__card-resources">
                                 <div className="singleSeries__card-resource">
                                     <Typography align='center' gutterBottom variant="h6" component="div">Creators</Typography>
                                     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                        {select_series.creators.items.map((creator: any) => (
+                                        {select_series!.creators.items.map((creator: any) => (
                                             <>
                                                 <ListItem
                                                     key={creator}
@@ -43,7 +43,7 @@ const PageSeriesOne: FC = () => {
                                 <div className="singleSeries__card-resource">
                                     <Typography align='center' gutterBottom variant="h6" component="div">Characters</Typography>
                                     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                        {select_series.characters.items.map((character: any) => (
+                                        {select_series!.characters.items.map((character: any) => (
                                             <>
                                                 <ListItem
                                                     key={character}
@@ -59,7 +59,7 @@ const PageSeriesOne: FC = () => {
                                 <div className="singleSeries__card-resource">
                                     <Typography align='center' gutterBottom variant="h6" component="div">Stories</Typography>
                                     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                        {select_series.stories.items.map((story: any) => (
+                                        {select_series!.stories.items.map((story: any) => (
                                             <>
                                                 <ListItem
                                                     key={story}
@@ -75,7 +75,7 @@ const PageSeriesOne: FC = () => {
                                 <div className="singleSeries__card-resource">
                                     <Typography align='center' gutterBottom variant="h6" component="div">Comics</Typography>
                                     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                        {select_series.comics.items.map((comic: any) => (
+                                        {select_series!.comics.items.map((comic: any) => (
                                             <>
                                                 <ListItem
                                                     key={comic}
@@ -91,7 +91,7 @@ const PageSeriesOne: FC = () => {
                                 <div className="series-one__card-resource">
                                     <Typography align='center' gutterBottom variant="h6" component="div">Events</Typography>
                                     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                        {select_series.events.items.map((event: any) => (
+                                        {select_series!.events.items.map((event: any) => (
                                             <>
                                                 <ListItem
                                                     key={event}
