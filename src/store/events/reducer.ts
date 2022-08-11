@@ -1,34 +1,46 @@
-import {getAllEventsErrorAction, getAllEventsSuccessAction, getAllEventsStartAction, getEventErrorAction, getEventStartAction, getEventSuccessAction} from "./actions";
+import * as actions from "../events/actions";
 import {createReducer} from "@reduxjs/toolkit";
+import {InferValueTypes} from "../../models/common";
+import {TEvent} from "../../models/event";
 
 const initialState = {
     events: [],
     event: {},
-    total: 1,
     loading: false,
     error: null
 }
 
+type ActionTypes = ReturnType<InferValueTypes<typeof actions>>
+
+export type TInitialState = {
+    events: Array<TEvent>,
+    event: TEvent | {},
+    loading: boolean,
+    error: any
+}
+
+const {getAllEventsErrorAction, getAllEventsSuccessAction, getAllEventsStartAction, getEventErrorAction, getEventStartAction, getEventSuccessAction} = actions;
+
 export default createReducer(initialState, {
-    [getAllEventsStartAction]: function (state: any, action: any) {
+    [getAllEventsStartAction]: function (state: TInitialState) {
         state.loading = true
     },
-    [getAllEventsSuccessAction]: function (state: any, action: any) {
+    [getAllEventsSuccessAction]: function (state: TInitialState, action: ActionTypes) {
         state.events = action.payload
         state.loading = false
     },
-    [getAllEventsErrorAction]: function (state: any, action: any) {
+    [getAllEventsErrorAction]: function (state: TInitialState, action: ActionTypes) {
         state.error = action.payload
         state.loading = false
     },
-    [getEventStartAction]: function (state: any, action: any) {
+    [getEventStartAction]: function (state: TInitialState) {
         state.loading = true
     },
-    [getEventSuccessAction]: function (state: any, action: any) {
+    [getEventSuccessAction]: function (state: TInitialState, action: ActionTypes) {
         state.event = action.payload
         state.loading = false
     },
-    [getEventErrorAction]: function (state: any, action: any) {
+    [getEventErrorAction]: function (state: TInitialState, action: ActionTypes) {
         state.error = action.payload
         state.loading = false
     }

@@ -1,34 +1,46 @@
-import {getAllCreatorsStartAction, getAllCreatorsSuccessAction, getAllCreatorsErrorAction, getCreatorErrorAction, getCreatorStartAction, getCreatorSuccessAction} from "./actions";
+import * as actions from "./actions";
 import {createReducer} from "@reduxjs/toolkit";
+import {InferValueTypes} from "../../models/common";
+import {TCreator} from "../../models/creator";
 
 const initialState = {
     creators: [],
     creator: {},
-    total: 1,
     loading: false,
     error: null
 }
 
+type ActionTypes = ReturnType<InferValueTypes<typeof actions>>
+
+export type TInitialState = {
+    creators: Array<TCreator>,
+    creator: TCreator | {},
+    loading: boolean,
+    error: any
+}
+
+const {getAllCreatorsStartAction, getAllCreatorsSuccessAction, getAllCreatorsErrorAction, getCreatorErrorAction, getCreatorStartAction, getCreatorSuccessAction} = actions;
+
 export default createReducer(initialState, {
-    [getAllCreatorsStartAction]: function (state: any, action: any) {
+    [getAllCreatorsStartAction]: function (state: TInitialState) {
         state.loading = true
     },
-    [getAllCreatorsSuccessAction]: function (state: any, action: any) {
+    [getAllCreatorsSuccessAction]: function (state: TInitialState, action: ActionTypes) {
         state.creators = action.payload
         state.loading = false
     },
-    [getAllCreatorsErrorAction]: function (state: any, action: any) {
+    [getAllCreatorsErrorAction]: function (state: TInitialState, action: ActionTypes) {
         state.error = action.payload
         state.loading = false
     },
-    [getCreatorStartAction]: function (state: any, action: any) {
+    [getCreatorStartAction]: function (state: TInitialState) {
         state.loading = true
     },
-    [getCreatorSuccessAction]: function (state: any, action: any) {
+    [getCreatorSuccessAction]: function (state: TInitialState, action: ActionTypes) {
         state.creator = action.payload
         state.loading = false
     },
-    [getCreatorErrorAction]: function (state: any, action: any) {
+    [getCreatorErrorAction]: function (state: TInitialState, action: ActionTypes) {
         state.error = action.payload
         state.loading = false
     }
