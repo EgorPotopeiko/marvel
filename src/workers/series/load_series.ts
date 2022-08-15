@@ -6,8 +6,7 @@ import {
     getSeriesSuccessAction
 } from "../../store/series/actions";
 
-function* loadSeries(payload: any) {
-    const {payload: id} = payload;
+function* loadSeries({payload: id}: any) {
     try {
         const { data }: AxiosResponse = yield call(Series.getSeries, id);
         const newData = data.data.results;

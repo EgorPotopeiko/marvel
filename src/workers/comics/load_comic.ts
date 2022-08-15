@@ -6,8 +6,7 @@ import {
     getComicSuccessAction
 } from "../../store/comics/actions";
 
-function* loadComic(payload: any) {
-    const {payload: id} = payload;
+function* loadComic({payload: id}: any) {
     try {
         const { data }: AxiosResponse = yield call(Comics.getComic, id);
         const newData = data.data.results;

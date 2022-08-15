@@ -6,9 +6,8 @@ import {
     getCharacterSuccessAction
 } from "../../store/characters/actions";
 
-function* loadCharacter(payload: any) {
+function* loadCharacter({payload: id}: any) {
     try {
-        const {payload: id} = payload;
         const { data }: AxiosResponse = yield call(Characters.getCharacter, id);
         const newData = data.data.results;
         yield put(getCharacterSuccessAction(...newData));
