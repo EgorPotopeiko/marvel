@@ -20,7 +20,7 @@ const CardEvents: FC<EventsProps> = ({event}) => {
                         <CardMedia
                             component="img"
                             height="170"
-                            image={event.thumbnail.path + "/landscape_xlarge.jpg"}
+                            image={`${event.thumbnail.path + `/landscape_xlarge.${event.thumbnail.extension}`}`}
                         />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div">

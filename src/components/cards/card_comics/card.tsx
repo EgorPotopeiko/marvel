@@ -21,7 +21,7 @@ const CardComics: FC<ComicsProps> = ({comic}) => {
                         <CardMedia
                             component="img"
                             height="170"
-                            image={comic.thumbnail.path + "/landscape_xlarge.jpg"}
+                            image={`${comic.thumbnail.path + `/landscape_xlarge.${comic.thumbnail.extension}`}`}
                         />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div">

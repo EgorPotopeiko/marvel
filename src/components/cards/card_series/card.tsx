@@ -20,7 +20,7 @@ const CardSeries: FC<SeriesProps> = ({series}) => {
                         <CardMedia
                             component="img"
                             height="170"
-                            image={series.thumbnail.path + "/landscape_xlarge.jpg"}
+                            image={`${series.thumbnail.path + `/landscape_xlarge.${series.thumbnail.extension}`}`}
                         />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div">

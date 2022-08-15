@@ -20,7 +20,7 @@ const CardCharacter: FC<CharacterProps> = ({person}) => {
                         <CardMedia
                             component="img"
                             height="170"
-                            image={person.thumbnail.path + `/landscape_xlarge${person.thumbnail.extension === 'jpg' ? '.jpg' : '.gif'}`}
+                            image={`${person.thumbnail.path + `/landscape_xlarge.${person.thumbnail.extension}`}`}
                         />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div">

@@ -20,7 +20,7 @@ const CardCreators: FC<CreatorProps> = ({creator}) => {
                         <CardMedia
                             component="img"
                             height="170"
-                            image={creator.thumbnail.path + "/landscape_xlarge.jpg"}
+                            image={`${creator.thumbnail.path + `/landscape_xlarge.${creator.thumbnail.extension}`}`}
                         />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div">
