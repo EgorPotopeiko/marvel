@@ -4,6 +4,7 @@ import {Container, Divider, List, ListItem, ListItemText, Typography} from "@mui
 import {useSelector} from "react-redux";
 import Loader from "../../../components/loader/loader";
 import {selectCreators} from "../../../store/creators/selectors";
+import {ComicSummary, EventSummary, SeriesSummary, StorySummary} from "../../../models/common";
 
 const PageCreator: FC = () => {
     const {creator, isLoading} = useSelector(selectCreators);
@@ -26,10 +27,10 @@ const PageCreator: FC = () => {
                                 <div className="creator__card-resource">
                                     <Typography align='center' gutterBottom variant="h6" component="div">Creators</Typography>
                                     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                        {creator!.comics.items.map((comic: any) => (
+                                        {creator!.comics.items.map((comic: ComicSummary) => (
                                             <>
                                                 <ListItem
-                                                    key={comic}
+                                                    key={comic.name}
                                                     disableGutters
                                                 >
                                                     <ListItemText primary={comic.name} />
@@ -42,10 +43,10 @@ const PageCreator: FC = () => {
                                 <div className="creator__card-resource">
                                     <Typography align='center' gutterBottom variant="h6" component="div">Series</Typography>
                                     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                        {creator!.series.items.map((series: any) => (
+                                        {creator!.series.items.map((series: SeriesSummary) => (
                                             <>
                                                 <ListItem
-                                                    key={series}
+                                                    key={series.name}
                                                     disableGutters
                                                 >
                                                     <ListItemText primary={series.name} />
@@ -58,10 +59,10 @@ const PageCreator: FC = () => {
                                 <div className="creator__card-resource">
                                     <Typography align='center' gutterBottom variant="h6" component="div">Stories</Typography>
                                     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                        {creator!.stories.items.map((story: any) => (
+                                        {creator!.stories.items.map((story: StorySummary) => (
                                             <>
                                                 <ListItem
-                                                    key={story}
+                                                    key={story.name}
                                                     disableGutters
                                                 >
                                                     <ListItemText primary={story.name} />
@@ -74,10 +75,10 @@ const PageCreator: FC = () => {
                                 <div className="creator__card-resource">
                                     <Typography align='center' gutterBottom variant="h6" component="div">Events</Typography>
                                     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                        {creator!.events.items.map((event: any) => (
+                                        {creator!.events.items.map((event: EventSummary) => (
                                             <>
                                                 <ListItem
-                                                    key={event}
+                                                    key={event.name}
                                                     disableGutters
                                                 >
                                                     <ListItemText primary={event.name} />

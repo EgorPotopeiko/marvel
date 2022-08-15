@@ -4,9 +4,10 @@ import {Card, CardActionArea, CardContent, CardMedia, Typography} from "@mui/mat
 import {useDispatch} from "react-redux";
 import {Link} from "react-router-dom";
 import {getStoryStartAction} from "../../../store/stories/actions";
+import {TStory} from "../../../models/story";
 
 interface StoriesProps{
-    story: any
+    story: TStory
 }
 
 const CardStories: FC<StoriesProps> = ({story}) => {

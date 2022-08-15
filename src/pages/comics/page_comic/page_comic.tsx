@@ -4,6 +4,7 @@ import {Container, Divider, List, ListItem, ListItemText, Typography} from "@mui
 import {useSelector} from "react-redux";
 import Loader from "../../../components/loader/loader";
 import {selectComics} from "../../../store/comics/selectors";
+import {CharacterSummary, ComicSummary, CreatorSummary, StorySummary} from "../../../models/common";
 
 const PageComic: FC = () => {
     const {comic, isLoading} = useSelector(selectComics);
@@ -39,10 +40,10 @@ const PageComic: FC = () => {
                                 <div className="comic__card-resource">
                                     <Typography align='center' gutterBottom variant="h6" component="div">Variants</Typography>
                                     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                        {comic!.variants.map((variant: any) => (
+                                        {comic!.variants.map((variant: ComicSummary) => (
                                             <>
                                                 <ListItem
-                                                    key={variant}
+                                                    key={variant.name}
                                                     disableGutters
                                                 >
                                                     <ListItemText primary={variant.name} />
@@ -55,10 +56,10 @@ const PageComic: FC = () => {
                                 <div className="comic__card-resource">
                                     <Typography align='center' gutterBottom variant="h6" component="div">Creators</Typography>
                                     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                        {comic!.creators.items.map((creator: any) => (
+                                        {comic!.creators.items.map((creator: CreatorSummary) => (
                                             <>
                                                 <ListItem
-                                                    key={creator}
+                                                    key={creator.name}
                                                     disableGutters
                                                 >
                                                     <ListItemText primary={creator.name} secondary={creator.role} />
@@ -71,10 +72,10 @@ const PageComic: FC = () => {
                                 <div className="comic__card-resource">
                                     <Typography align='center' gutterBottom variant="h6" component="div">Characters</Typography>
                                     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                        {comic!.characters.items.map((character: any) => (
+                                        {comic!.characters.items.map((character: CharacterSummary) => (
                                             <>
                                                 <ListItem
-                                                    key={character}
+                                                    key={character.name}
                                                     disableGutters
                                                 >
                                                     <ListItemText primary={character.name} />
@@ -87,10 +88,10 @@ const PageComic: FC = () => {
                                 <div className="comic__card-resource">
                                     <Typography align='center' gutterBottom variant="h6" component="div">Stories</Typography>
                                     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                        {comic!.stories.items.map((story: any) => (
+                                        {comic!.stories.items.map((story: StorySummary) => (
                                             <>
                                                 <ListItem
-                                                    key={story}
+                                                    key={story.name}
                                                     disableGutters
                                                 >
                                                     <ListItemText primary={story.name} />

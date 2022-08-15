@@ -8,6 +8,7 @@ import {getAllCreatorsStartAction} from "../../../store/creators/actions";
 import CardCreators from "../../../components/cards/card_creator/card";
 import {selectCreators} from "../../../store/creators/selectors";
 import Loader from "../../../components/loader/loader";
+import {TCreator} from "../../../models/creator";
 
 const PageCreators: FC = () => {
     const dispatch = useDispatch();
@@ -22,7 +23,7 @@ const PageCreators: FC = () => {
             <Container maxWidth='lg'>
                 <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 16 }}>
                     {isLoading && (<Loader />)}
-                    {!isLoading && (creators.map((creator: any) => (
+                    {!isLoading && (creators.map((creator: TCreator) => (
                         <Grid item xs={2} sm={4} md={4} key={creator.id}>
                             <CardCreators creator={creator} />
                         </Grid>

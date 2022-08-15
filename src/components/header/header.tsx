@@ -9,6 +9,7 @@ import {getAllCreatorsStartAction} from "../../store/creators/actions";
 import {getAllEventsStartAction} from "../../store/events/actions";
 import {getAllSeriesStartAction} from "../../store/series/actions";
 import {getAllStoriesStartAction} from "../../store/stories/actions";
+import {setPage} from "../../store/pagination/actions";
 
 const Header: FC = () => {
     const dispatch = useDispatch();
@@ -22,12 +23,30 @@ const Header: FC = () => {
                 <Button onClick={() => {
                     dispatch(startSearch(search.toLowerCase()))
                     switch (window.location.pathname) {
-                        case '/characters': return dispatch(getAllCharactersStartAction())
-                        case '/comics': return dispatch(getAllComicsStartAction())
-                        case '/creators': return dispatch(getAllCreatorsStartAction())
-                        case '/events': return dispatch(getAllEventsStartAction())
-                        case '/series': return dispatch(getAllSeriesStartAction())
-                        case '/stories': return dispatch(getAllStoriesStartAction())
+                        case '/characters': return (
+                            dispatch(setPage(1)),
+                            dispatch(getAllCharactersStartAction())
+                        )
+                        case '/comics': return (
+                            dispatch(setPage(1)),
+                            dispatch(getAllComicsStartAction())
+                        )
+                        case '/creators': return (
+                            dispatch(setPage(1)),
+                            dispatch(getAllCreatorsStartAction())
+                        )
+                        case '/events': return (
+                            dispatch(setPage(1)),
+                            dispatch(getAllEventsStartAction())
+                        )
+                        case '/series': return (
+                            dispatch(setPage(1)),
+                            dispatch(getAllSeriesStartAction())
+                        )
+                        case '/stories': return (
+                            dispatch(setPage(1)),
+                            dispatch(getAllStoriesStartAction())
+                        )
                     }
                 }} variant='contained'>search</Button>
             </div>

@@ -4,9 +4,10 @@ import {Card, CardActionArea, CardContent, CardMedia, Typography} from "@mui/mat
 import {useDispatch} from "react-redux";
 import {getSeriesStartAction} from "../../../store/series/actions";
 import {Link} from "react-router-dom";
+import {TSeries} from "../../../models/series";
 
 interface SeriesProps{
-    series: any
+    series: TSeries
 }
 
 const CardSeries: FC<SeriesProps> = ({series}) => {

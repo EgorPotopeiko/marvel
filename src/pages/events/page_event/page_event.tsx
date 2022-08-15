@@ -4,6 +4,7 @@ import {Container, Divider, List, ListItem, ListItemText, Typography} from "@mui
 import {useSelector} from "react-redux";
 import Loader from "../../../components/loader/loader";
 import {selectEvents} from "../../../store/events/selectors";
+import {CharacterSummary, ComicSummary, CreatorSummary, SeriesSummary, StorySummary} from "../../../models/common";
 
 const PageEvent: FC = () => {
     const {event, isLoading} = useSelector(selectEvents);
@@ -27,10 +28,10 @@ const PageEvent: FC = () => {
                                 <div className="event__card-resource">
                                     <Typography align='center' gutterBottom variant="h6" component="div">Creators</Typography>
                                     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                        {event!.creators.items.map((creator: any) => (
+                                        {event!.creators.items.map((creator: CreatorSummary) => (
                                             <>
                                                 <ListItem
-                                                    key={creator}
+                                                    key={creator.name}
                                                     disableGutters
                                                 >
                                                     <ListItemText primary={creator.name} />
@@ -43,10 +44,10 @@ const PageEvent: FC = () => {
                                 <div className="event__card-resource">
                                     <Typography align='center' gutterBottom variant="h6" component="div">Characters</Typography>
                                     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                        {event!.characters.items.map((character: any) => (
+                                        {event!.characters.items.map((character: CharacterSummary) => (
                                             <>
                                                 <ListItem
-                                                    key={character}
+                                                    key={character.name}
                                                     disableGutters
                                                 >
                                                     <ListItemText primary={character.name} />
@@ -59,10 +60,10 @@ const PageEvent: FC = () => {
                                 <div className="event__card-resource">
                                     <Typography align='center' gutterBottom variant="h6" component="div">Stories</Typography>
                                     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                        {event!.stories.items.map((story: any) => (
+                                        {event!.stories.items.map((story: StorySummary) => (
                                             <>
                                                 <ListItem
-                                                    key={story}
+                                                    key={story.name}
                                                     disableGutters
                                                 >
                                                     <ListItemText primary={story.name} />
@@ -75,10 +76,10 @@ const PageEvent: FC = () => {
                                 <div className="event__card-resource">
                                     <Typography align='center' gutterBottom variant="h6" component="div">Comics</Typography>
                                     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                        {event!.comics.items.map((comic: any) => (
+                                        {event!.comics.items.map((comic: ComicSummary) => (
                                             <>
                                                 <ListItem
-                                                    key={comic}
+                                                    key={comic.name}
                                                     disableGutters
                                                 >
                                                     <ListItemText primary={comic.name} />
@@ -91,10 +92,10 @@ const PageEvent: FC = () => {
                                 <div className="event__card-resource">
                                     <Typography align='center' gutterBottom variant="h6" component="div">Series</Typography>
                                     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                        {event!.series.items.map((series: any) => (
+                                        {event!.series.items.map((series: SeriesSummary) => (
                                             <>
                                                 <ListItem
-                                                    key={series}
+                                                    key={series.name}
                                                     disableGutters
                                                 >
                                                     <ListItemText primary={series.name} />

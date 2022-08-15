@@ -1,4 +1,4 @@
-import {EventList, StoryList, Url, Image, ComicList, SeriesList,} from "./common";
+import {EventList, StoryList, Url, Image, ComicList, SeriesList} from "./common";
 
 export type TCreator = {
     id: number,

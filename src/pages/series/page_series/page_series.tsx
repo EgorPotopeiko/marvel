@@ -8,6 +8,7 @@ import {getAllSeriesStartAction} from "../../../store/series/actions";
 import CardSeries from "../../../components/cards/card_series/card";
 import {selectSeries} from "../../../store/series/selectors";
 import Loader from "../../../components/loader/loader";
+import {TSeries} from "../../../models/series";
 
 const PageSeries: FC = () => {
     const dispatch = useDispatch();
@@ -22,7 +23,7 @@ const PageSeries: FC = () => {
             <Container maxWidth='lg'>
                 <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 16 }}>
                     {isLoading && (<Loader />)}
-                    {!isLoading && (series.map((series: any) => (
+                    {!isLoading && (series.map((series: TSeries) => (
                         <Grid item xs={2} sm={4} md={4} key={series.id}>
                             <CardSeries series={series} />
                         </Grid>

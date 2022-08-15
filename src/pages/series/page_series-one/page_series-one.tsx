@@ -4,6 +4,7 @@ import {Container, Divider, List, ListItem, ListItemText, Typography} from "@mui
 import {useSelector} from "react-redux";
 import Loader from "../../../components/loader/loader";
 import {selectSeries} from "../../../store/series/selectors";
+import {CharacterSummary, ComicSummary, CreatorSummary, EventSummary, StorySummary} from "../../../models/common";
 
 const PageSeriesOne: FC = () => {
     const {select_series, isLoading} = useSelector(selectSeries);
@@ -27,10 +28,10 @@ const PageSeriesOne: FC = () => {
                                 <div className="singleSeries__card-resource">
                                     <Typography align='center' gutterBottom variant="h6" component="div">Creators</Typography>
                                     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                        {select_series!.creators.items.map((creator: any) => (
+                                        {select_series!.creators.items.map((creator: CreatorSummary) => (
                                             <>
                                                 <ListItem
-                                                    key={creator}
+                                                    key={creator.name}
                                                     disableGutters
                                                 >
                                                     <ListItemText primary={creator.name} />
@@ -43,10 +44,10 @@ const PageSeriesOne: FC = () => {
                                 <div className="singleSeries__card-resource">
                                     <Typography align='center' gutterBottom variant="h6" component="div">Characters</Typography>
                                     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                        {select_series!.characters.items.map((character: any) => (
+                                        {select_series!.characters.items.map((character: CharacterSummary) => (
                                             <>
                                                 <ListItem
-                                                    key={character}
+                                                    key={character.name}
                                                     disableGutters
                                                 >
                                                     <ListItemText primary={character.name} />
@@ -59,10 +60,10 @@ const PageSeriesOne: FC = () => {
                                 <div className="singleSeries__card-resource">
                                     <Typography align='center' gutterBottom variant="h6" component="div">Stories</Typography>
                                     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                        {select_series!.stories.items.map((story: any) => (
+                                        {select_series!.stories.items.map((story: StorySummary) => (
                                             <>
                                                 <ListItem
-                                                    key={story}
+                                                    key={story.name}
                                                     disableGutters
                                                 >
                                                     <ListItemText primary={story.name} />
@@ -75,10 +76,10 @@ const PageSeriesOne: FC = () => {
                                 <div className="singleSeries__card-resource">
                                     <Typography align='center' gutterBottom variant="h6" component="div">Comics</Typography>
                                     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                        {select_series!.comics.items.map((comic: any) => (
+                                        {select_series!.comics.items.map((comic: ComicSummary) => (
                                             <>
                                                 <ListItem
-                                                    key={comic}
+                                                    key={comic.name}
                                                     disableGutters
                                                 >
                                                     <ListItemText primary={comic.name} />
@@ -91,10 +92,10 @@ const PageSeriesOne: FC = () => {
                                 <div className="series-one__card-resource">
                                     <Typography align='center' gutterBottom variant="h6" component="div">Events</Typography>
                                     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                        {select_series!.events.items.map((event: any) => (
+                                        {select_series!.events.items.map((event: EventSummary) => (
                                             <>
                                                 <ListItem
-                                                    key={event}
+                                                    key={event.name}
                                                     disableGutters
                                                 >
                                                     <ListItemText primary={event.name} />

@@ -4,6 +4,7 @@ import {Container, Divider, List, ListItem, ListItemText, Typography} from "@mui
 import {useSelector} from "react-redux";
 import {selectCharacters} from "../../../store/characters/selectors";
 import Loader from "../../../components/loader/loader";
+import {ComicSummary, EventSummary, SeriesSummary, StorySummary} from "../../../models/common";
 
 const PageCharacter: FC = () => {
     const {character, isLoading} = useSelector(selectCharacters);
@@ -27,13 +28,13 @@ const PageCharacter: FC = () => {
                             <div className="character__card-resource">
                                 <Typography align='center' gutterBottom variant="h6" component="div">Comics</Typography>
                                 <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                    {character!.comics.items.map((comics: any) => (
+                                    {character!.comics.items.map((comic: ComicSummary) => (
                                         <>
                                             <ListItem
-                                            key={comics}
+                                            key={comic.name}
                                             disableGutters
                                             >
-                                                <ListItemText primary={comics.name} />
+                                                <ListItemText primary={comic.name} />
                                             </ListItem>
                                             <Divider variant="inset" component="li" />
                                         </>
@@ -43,10 +44,10 @@ const PageCharacter: FC = () => {
                             <div className="character__card-resource">
                                 <Typography align='center' gutterBottom variant="h6" component="div">Series</Typography>
                                 <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                    {character!.series.items.map((series: any) => (
+                                    {character!.series.items.map((series: SeriesSummary) => (
                                         <>
                                             <ListItem
-                                            key={series}
+                                            key={series.name}
                                             disableGutters
                                             >
                                                 <ListItemText primary={series.name} />
@@ -59,13 +60,13 @@ const PageCharacter: FC = () => {
                             <div className="character__card-resource">
                                 <Typography align='center' gutterBottom variant="h6" component="div">Stories</Typography>
                                 <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                    {character!.stories.items.map((stories: any) => (
+                                    {character!.stories.items.map((story: StorySummary) => (
                                         <>
                                             <ListItem
-                                            key={stories}
+                                            key={story.name}
                                             disableGutters
                                             >
-                                                <ListItemText primary={stories.name} />
+                                                <ListItemText primary={story.name} />
                                             </ListItem>
                                             <Divider variant="inset" component="li" />
                                         </>
@@ -75,13 +76,13 @@ const PageCharacter: FC = () => {
                             <div className="character__card-resource">
                                 <Typography align='center' gutterBottom variant="h6" component="div">Events</Typography>
                                 <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
-                                    {character!.events.items.map((events: any) => (
+                                    {character!.events.items.map((event: EventSummary) => (
                                         <>
                                             <ListItem
-                                            key={events}
+                                            key={event.name}
                                             disableGutters
                                             >
-                                                <ListItemText primary={events.name} />
+                                                <ListItemText primary={event.name} />
                                             </ListItem>
                                             <Divider variant="inset" component="li" />
                                         </>

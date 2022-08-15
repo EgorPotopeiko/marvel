@@ -1,6 +1,6 @@
 import React, {FC, useEffect} from 'react';
 import './page_characters.scss';
-import CardPerson from "../../../components/cards/card_person/card";
+import CardPerson from "../../../components/cards/card_character/card";
 import {Container, Grid, Pagination} from "@mui/material";
 import {getAllCharactersStartAction} from "../../../store/characters/actions";
 import {useDispatch, useSelector} from "react-redux";

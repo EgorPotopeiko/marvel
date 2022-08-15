@@ -8,6 +8,7 @@ import CardComics from "../../../components/cards/card_comics/card";
 import {getAllComicsStartAction} from "../../../store/comics/actions";
 import {selectComics} from "../../../store/comics/selectors";
 import Loader from "../../../components/loader/loader";
+import {TComic} from "../../../models/comic";
 
 const PageComics: FC = () => {
     const dispatch = useDispatch();
@@ -22,7 +23,7 @@ const PageComics: FC = () => {
             <Container maxWidth='lg'>
                 <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 16 }}>
                     {isLoading && (<Loader />)}
-                    {!isLoading && (comics.map((comics: any) => (
+                    {!isLoading && (comics.map((comics: TComic) => (
                         <Grid item xs={2} sm={4} md={4} key={comics.id}>
                             <CardComics comic={comics} />
                         </Grid>

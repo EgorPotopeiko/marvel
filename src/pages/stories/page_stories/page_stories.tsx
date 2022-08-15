@@ -1,5 +1,4 @@
 import React, {FC, useEffect} from 'react';
-import './page_stories.scss';
 import {Container, Grid, Pagination} from "@mui/material";
 import {useDispatch, useSelector} from "react-redux";
 import {statePage, stateTotal} from "../../../store/pagination/selectors";
@@ -8,6 +7,8 @@ import {getAllStoriesStartAction} from "../../../store/stories/actions";
 import {selectStories} from "../../../store/stories/selectors";
 import CardStories from "../../../components/cards/card_story/card";
 import Loader from "../../../components/loader/loader";
+import {TStory} from "../../../models/story";
+import './page_stories.scss';
 
 const PageStories: FC = () => {
     const dispatch = useDispatch();
@@ -22,7 +23,7 @@ const PageStories: FC = () => {
             <Container maxWidth='lg'>
                 <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 16 }}>
                     {isLoading && (<Loader />)}
-                    {!isLoading && (stories.map((story: any) => (
+                    {!isLoading && (stories.map((story: TStory) => (
                         <Grid item xs={2} sm={4} md={4} key={story.id}>
                             <CardStories story={story} />
                         </Grid>

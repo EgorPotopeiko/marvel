@@ -4,9 +4,10 @@ import {Card, CardActionArea, CardContent, CardMedia, Typography} from "@mui/mat
 import {useDispatch} from "react-redux";
 import {Link} from "react-router-dom";
 import {getEventStartAction} from "../../../store/events/actions";
+import {TEvent} from "../../../models/event";
 
 interface EventsProps{
-    event: any
+    event: TEvent
 }
 
 const CardEvents: FC<EventsProps> = ({event}) => {

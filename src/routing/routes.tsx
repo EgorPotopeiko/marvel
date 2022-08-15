@@ -11,8 +11,9 @@ import PageCreator from "../pages/creators/page_creator/page_creator";
 import PageEvent from "../pages/events/page_event/page_event";
 import PageSeriesOne from "../pages/series/page_series-one/page_series-one";
 import PageStory from "../pages/stories/page_story/page_story";
+import {TRoutes} from "../models/routes";
 
-export const userRoutes: any[] = [
+export const userRoutes: TRoutes[] = [
     { path: PUBLIC_PATH.CHARACTERS, Component: PageCharacters, name: 'Персонажи'},
     { path: PUBLIC_PATH.CHARACTER, Component: PageCharacter, name: 'Персонаж'},
     { path: PUBLIC_PATH.COMICS, Component: PageComics, name: 'Комиксы' },

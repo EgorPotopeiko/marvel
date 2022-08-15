@@ -4,12 +4,13 @@ import {Card, CardActionArea, CardContent, CardMedia, Typography} from "@mui/mat
 import {useDispatch} from "react-redux";
 import {getCharacterStartAction} from "../../../store/characters/actions";
 import {Link} from "react-router-dom";
+import {TCharacter} from "../../../models/character";
 
-interface PersonProps{
-    person: any
+interface CharacterProps{
+    person: TCharacter
 }
 
-const CardPerson: FC<PersonProps> = ({person}) => {
+const CardCharacter: FC<CharacterProps> = ({person}) => {
     const dispatch = useDispatch();
     return (
         <div onClick={() => dispatch(getCharacterStartAction(person.id))} className='card__person'>
@@ -36,4 +37,4 @@ const CardPerson: FC<PersonProps> = ({person}) => {
     );
 }
 
-export default CardPerson;
+export default CardCharacter;

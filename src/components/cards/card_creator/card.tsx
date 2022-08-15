@@ -4,9 +4,10 @@ import {Card, CardActionArea, CardContent, CardMedia, Typography} from "@mui/mat
 import {useDispatch} from "react-redux";
 import {Link} from "react-router-dom";
 import {getCreatorStartAction} from "../../../store/creators/actions";
+import {TCreator} from "../../../models/creator";
 
 interface CreatorProps{
-    creator: any
+    creator: TCreator
 }
 
 const CardCreators: FC<CreatorProps> = ({creator}) => {
@@ -24,9 +25,6 @@ const CardCreators: FC<CreatorProps> = ({creator}) => {
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div">
                                 {creator.fullName}
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary">
-                                {creator.description}
                             </Typography>
                         </CardContent>
                     </CardActionArea>
