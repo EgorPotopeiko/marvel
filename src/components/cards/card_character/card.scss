@@ -6,11 +6,17 @@
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
   }
+
   .css-h93ljk-MuiTypography-root {
     font-family: 'Courgette', cursive;
   }
+
   a {
     text-decoration: none;
     color: black;
+  }
+  .css-b6lsxj-MuiButtonBase-root-MuiCardActionArea-root {
+    height: 100%;
+    display: contents;
   }
 }

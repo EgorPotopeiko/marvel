@@ -6,7 +6,7 @@ import {
 } from "../../store/creators/actions";
 import Creators from "../../services/creators";
 
-function* loadCreator({payload: id}: any) {
+function* loadCreator({payload: id}: {type: string, payload: number}) {
     try {
         const { data }: AxiosResponse = yield call(Creators.getCreator, id);
         const newData = data.data.results;

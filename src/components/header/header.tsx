@@ -1,5 +1,4 @@
 import React, {FC, useEffect, useState} from 'react';
-import './header.scss';
 import {Button, Container, Input} from "@mui/material";
 import {useDispatch} from "react-redux";
 import {setSearch as startSearch} from "../../store/search/actions";
@@ -10,6 +9,7 @@ import {getAllEventsStartAction} from "../../store/events/actions";
 import {getAllSeriesStartAction} from "../../store/series/actions";
 import {getAllStoriesStartAction} from "../../store/stories/actions";
 import {setPage} from "../../store/pagination/actions";
+import './header.scss';
 
 const Header: FC = () => {
     const dispatch = useDispatch();

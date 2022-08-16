@@ -6,7 +6,7 @@ import {
     getStorySuccessAction
 } from "../../store/stories/actions";
 
-function* loadStory({payload: id}: any) {
+function* loadStory({payload: id}: {type: string, payload: number}) {
     try {
         const { data }: AxiosResponse = yield call(Stories.getStory, id);
         const newData = data.data.results;
