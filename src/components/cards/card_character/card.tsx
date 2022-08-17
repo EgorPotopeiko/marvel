@@ -1,10 +1,10 @@
 import React, {FC} from 'react';
-import './card.scss';
 import {Card, CardActionArea, CardContent, CardMedia, Typography} from "@mui/material";
 import {useDispatch} from "react-redux";
 import {getCharacterStartAction} from "../../../store/characters/actions";
 import {Link} from "react-router-dom";
 import {TCharacter} from "../../../models/character";
+import './card.scss';
 
 interface CharacterProps{
     person: TCharacter

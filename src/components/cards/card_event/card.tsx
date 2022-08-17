@@ -1,10 +1,10 @@
 import React, {FC} from 'react';
-import './card.scss';
 import {Card, CardActionArea, CardContent, CardMedia, Typography} from "@mui/material";
 import {useDispatch} from "react-redux";
 import {Link} from "react-router-dom";
 import {getEventStartAction} from "../../../store/events/actions";
 import {TEvent} from "../../../models/event";
+import './card.scss';
 
 interface EventsProps{
     event: TEvent

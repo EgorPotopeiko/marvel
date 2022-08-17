@@ -1,11 +1,10 @@
 import React, {FC} from 'react';
-import './card.scss';
 import {Card, CardActionArea, CardContent, CardMedia, Typography} from "@mui/material";
-import {getCharacterStartAction} from "../../../store/characters/actions";
 import {useDispatch} from "react-redux";
 import {getComicStartAction} from "../../../store/comics/actions";
 import {Link} from "react-router-dom";
 import {TComic} from "../../../models/comic";
+import './card.scss';
 
 interface ComicsProps{
     comic: TComic

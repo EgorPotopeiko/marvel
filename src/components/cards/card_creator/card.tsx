@@ -1,10 +1,10 @@
 import React, {FC} from 'react';
-import './card.scss';
 import {Card, CardActionArea, CardContent, CardMedia, Typography} from "@mui/material";
 import {useDispatch} from "react-redux";
 import {Link} from "react-router-dom";
 import {getCreatorStartAction} from "../../../store/creators/actions";
 import {TCreator} from "../../../models/creator";
+import './card.scss';
 
 interface CreatorProps{
     creator: TCreator

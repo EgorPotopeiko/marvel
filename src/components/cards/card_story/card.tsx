@@ -1,10 +1,10 @@
 import React, {FC} from 'react';
-import './card.scss';
 import {Card, CardActionArea, CardContent, CardMedia, Typography} from "@mui/material";
 import {useDispatch} from "react-redux";
 import {Link} from "react-router-dom";
 import {getStoryStartAction} from "../../../store/stories/actions";
 import {TStory} from "../../../models/story";
+import './card.scss';
 
 interface StoriesProps{
     story: TStory

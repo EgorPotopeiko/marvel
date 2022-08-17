@@ -1,10 +1,10 @@
 import React, {FC} from 'react';
-import './card.scss';
 import {Card, CardActionArea, CardContent, CardMedia, Typography} from "@mui/material";
 import {useDispatch} from "react-redux";
 import {getSeriesStartAction} from "../../../store/series/actions";
 import {Link} from "react-router-dom";
 import {TSeries} from "../../../models/series";
+import './card.scss';
 
 interface SeriesProps{
     series: TSeries
