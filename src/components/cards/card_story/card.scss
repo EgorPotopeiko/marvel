@@ -19,12 +19,17 @@
   .css-b6lsxj-MuiButtonBase-root-MuiCardActionArea-root {
     height: 100%;
     position: relative;
-    .css-o69gx8-MuiCardMedia-root {
+    .css-46bh2p-MuiCardContent-root {
       position: absolute;
       top: 0;
     }
-    .css-46bh2p-MuiCardContent-root {
-      margin-top: 155px;
+    .css-1jgmn5n-MuiTypography-root {
+      font-style: italic;
     }
+  }
+  .css-r40f8v-MuiTypography-root {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
   }
 }

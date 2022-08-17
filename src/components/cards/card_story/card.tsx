@@ -17,11 +17,6 @@ const CardStories: FC<StoriesProps> = ({story}) => {
             <Card sx={{ maxWidth: 315, height: 340 }}>
                 <Link to={`/stories/${story.id}`}>
                     <CardActionArea>
-                        <CardMedia
-                            component="img"
-                            height="170"
-                            image={story.thumbnail !== null ? story.thumbnail.path + "/landscape_xlarge.jpg" : undefined}
-                        />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div">
                                 {story.title}
@@ -29,7 +24,13 @@ const CardStories: FC<StoriesProps> = ({story}) => {
                             <Typography variant="body2" color="text.secondary">
                                 {story.description}
                             </Typography>
+                            <Typography variant="h6" color="text.secondary">
+                                {story.type}
+                            </Typography>
                         </CardContent>
+                        <Typography variant="body2" color="text.secondary">
+                            {story.id}
+                        </Typography>
                     </CardActionArea>
                 </Link>
             </Card>
