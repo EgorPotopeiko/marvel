@@ -1,9 +1,9 @@
 import React, {FC} from 'react';
-import './App.scss';
 import {Navigate, Route, Routes} from "react-router";
 import {userRoutes} from "./routing/routes";
 import Header from "./components/header/header";
 import Menu from "./components/menu/menu";
+import './App.scss';
 
 const App: FC = () => {
   return (

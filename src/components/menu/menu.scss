@@ -12,13 +12,11 @@
     padding: 6px 10px;
     border-radius: 10px;
     transition: .3s all;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
     &:hover {
       background-color: black;
-    }
-    &-link {
-      text-transform: uppercase;
-      color: white;
-      text-decoration: none;
     }
   }
 }
