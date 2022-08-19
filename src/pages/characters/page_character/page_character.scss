@@ -28,9 +28,35 @@
       .css-uls1yk-MuiDivider-root {
         background-color: red;
         width: 107%;
+        height: 2px;
         max-width: 360px;
-        margin-left: -9px;
+        margin-left: -10px;
       }
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .page__character {
+    .character__card-resources {
+      display: block;
+      margin-right: 10px;
+    }
+    .character__card-resource {
+      padding: 0 4px;
+      .css-uls1yk-MuiDivider-root {
+        width: 0%;
+      }
+    }
+    .character__card-img {
+      margin-right: 20px;
+      max-width: 250px;
+      img {
+        width: 100%;
+      }
+    }
+    .character__card-resource + .character__card-resource {
+      margin-top: 20px;
     }
   }
 }

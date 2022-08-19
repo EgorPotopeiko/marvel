@@ -29,3 +29,13 @@
     }
   }
 }
+
+@media (max-width: 354px) {
+  .header {
+    &__actions {
+      .MuiButton-root {
+        margin-top: 15px;
+      }
+    }
+  }
+}

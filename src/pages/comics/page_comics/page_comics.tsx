@@ -24,7 +24,7 @@ const PageComics: FC = () => {
                 <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 16 }}>
                     {isLoading && (<Loader />)}
                     {!isLoading && (comics.map((comics: TComic) => (
-                        <Grid item xs={2} sm={4} md={4} key={comics.id}>
+                        <Grid item xs={2} sm={2.6} md={4} key={comics.id}>
                             <CardComics comic={comics} />
                         </Grid>
                     )))}

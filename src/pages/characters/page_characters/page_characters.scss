@@ -8,8 +8,15 @@
 @media (max-width: 900px) {
   .page__characters {
     .css-1xgjpwf-MuiGrid-root {
-      margin-left: -10px;
-      justify-content: center;
+      margin-left: -7px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .page__characters {
+    .css-1xgjpwf-MuiGrid-root {
+      margin-left: -14px;
     }
   }
 }
