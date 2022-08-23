@@ -1,5 +1,4 @@
 import React, {FC, useEffect} from 'react';
-import './page_characters.scss';
 import CardPerson from "../../../components/cards/card_character/card";
 import {Container, Grid, Pagination} from "@mui/material";
 import {getAllCharactersStartAction} from "../../../store/characters/actions";
@@ -9,6 +8,7 @@ import {statePage, stateTotal} from "../../../store/pagination/selectors";
 import {setPage} from "../../../store/pagination/actions";
 import Loader from "../../../components/loader/loader";
 import {TCharacter} from "../../../models/character";
+import './page_characters.scss';
 
 const PageCharacters: FC = () => {
     const dispatch = useDispatch();

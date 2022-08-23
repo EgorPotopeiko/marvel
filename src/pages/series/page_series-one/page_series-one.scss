@@ -22,15 +22,14 @@
     &-resource {
       border: 2px solid black;
       border-radius: 5px;
-      max-width: 340px;
       width: 100%;
-      padding: 0px 10px;
       .css-uls1yk-MuiDivider-root {
         background-color: red;
-        width: 107%;
         height: 2px;
-        max-width: 360px;
-        margin-left: -10px;
+        margin-left: 0;
+      }
+      .css-10hburv-MuiTypography-root {
+        padding-left: 10px;
       }
     }
   }
