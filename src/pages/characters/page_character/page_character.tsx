@@ -18,8 +18,7 @@ const PageCharacter: FC = () => {
                         <>
                         <div className="character__card-header">
                             <div className="character__card-img">
-                                {character!.thumbnail.path.match(regImg) !== null && <Skeleton variant="rectangular" width={210} height={60}></Skeleton>}
-                                {character!.thumbnail.path.match(regImg) === null && <img alt='#' src={character!.thumbnail.path + `/standard_fantastic.jpg`}/>}
+                                <img alt='#' src={character!.thumbnail.path + `/standard_fantastic.jpg`}/>
                             </div>
                             <div className="character__card-info">
                                 <Typography gutterBottom variant="h5" component="div">{character!.name}</Typography>
