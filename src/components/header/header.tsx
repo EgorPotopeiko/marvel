@@ -1,4 +1,4 @@
-import React, {FC, useEffect, useState} from 'react';
+import React, {ChangeEvent, FC, useEffect, useState} from 'react';
 import {Button, Container, Input} from "@mui/material";
 import {useDispatch} from "react-redux";
 import {setSearch as startSearch} from "../../store/search/actions";
@@ -19,7 +19,7 @@ const Header: FC = () => {
             <Container maxWidth='lg'>
             <img height='50px' width='150px' src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Marvel_Logo.svg/1200px-Marvel_Logo.svg.png' alt='#' />
             <div className='header__actions'>
-                <Input value={search} onChange={(e: any) => setSearch(e.target.value)} placeholder='search' />
+                <Input value={search} onChange={(e: ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)} placeholder='search' />
                 <Button onClick={() => {
                     dispatch(startSearch(search.toLowerCase()))
                     switch (window.location.pathname) {

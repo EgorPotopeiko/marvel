@@ -19,24 +19,16 @@
       background-color: black;
     }
   }
-  .css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root {
+  &__adaptive {
     display: none;
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-    text-transform: uppercase;
-    color: white;
-    text-decoration: none;
-    padding: 6px 10px;
-  }
-  .css-9l5vo-MuiCollapse-wrapperInner {
-    display: none;
-    padding-right: 0;
-    text-align: center;
   }
 }
 
 @media (max-width: 550px) {
   .menu {
+    &__adaptive {
+      display: block;
+    }
     &__item {
       display: none;
       &-adaptive {
@@ -47,16 +39,14 @@
         padding: 6px 10px;
       }
     }
-    .css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root {
-      display: block;
+    .css-10hburv-MuiTypography-root {
+      text-align: center;
+      color: white;
     }
     .css-13eg511-MuiButtonBase-root-MuiListItemButton-root {
       display: grid;
       padding: 0;
       text-align: center;
-    }
-    .css-9l5vo-MuiCollapse-wrapperInner {
-      display: block;
     }
   }
 }
