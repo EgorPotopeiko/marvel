@@ -5,6 +5,7 @@ import {getSeriesStartAction} from "../../../store/series/actions";
 import {Link} from "react-router-dom";
 import {TSeries} from "../../../models/series";
 import './card.scss';
+import '../cards.scss';
 
 interface SeriesProps{
     series: TSeries
@@ -13,7 +14,7 @@ interface SeriesProps{
 const CardSeries: FC<SeriesProps> = ({series}) => {
     const dispatch = useDispatch();
     return (
-        <div onClick={() => dispatch(getSeriesStartAction(series.id))} className='card__series'>
+        <div onClick={() => dispatch(getSeriesStartAction(series.id))} className='card card__series'>
             <Card sx={{ maxWidth: 315, height: 340 }}>
                 <Link to={`/series/${series.id}`}>
                     <CardActionArea>

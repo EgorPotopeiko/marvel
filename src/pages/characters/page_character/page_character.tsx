@@ -1,13 +1,14 @@
 import React, {FC} from 'react';
-import './page_character.scss';
-import {Container, Divider, List, ListItem, ListItemText, Typography} from "@mui/material";
+import {Container, Divider, List, ListItem, ListItemText, Skeleton, Typography} from "@mui/material";
 import {useSelector} from "react-redux";
 import {selectCharacters} from "../../../store/characters/selectors";
 import Loader from "../../../components/loader/loader";
 import {ComicSummary, EventSummary, SeriesSummary, StorySummary} from "../../../models/common";
+import './page_character.scss';
 
 const PageCharacter: FC = () => {
     const {character, isLoading} = useSelector(selectCharacters);
+    const regImg = /(image_not)\w+/gm;
     return (
         <div className="page__character">
             <Container maxWidth='lg'>
@@ -17,7 +18,8 @@ const PageCharacter: FC = () => {
                         <>
                         <div className="character__card-header">
                             <div className="character__card-img">
-                                <img alt='#' src={character!.thumbnail.path + `/standard_fantastic.jpg`} />
+                                {character!.thumbnail.path.match(regImg) !== null && <Skeleton variant="rectangular" width={210} height={60}></Skeleton>}
+                                {character!.thumbnail.path.match(regImg) === null && <img alt='#' src={character!.thumbnail.path + `/standard_fantastic.jpg`}/>}
                             </div>
                             <div className="character__card-info">
                                 <Typography gutterBottom variant="h5" component="div">{character!.name}</Typography>

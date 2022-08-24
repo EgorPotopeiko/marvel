@@ -5,7 +5,7 @@
     padding: 10px 15px;
     &-header {
       display: flex;
-      justify-content: space-between;
+      justify-content: end;
       margin-bottom: 20px;
     }
     &-img {
@@ -31,6 +31,53 @@
       .css-10hburv-MuiTypography-root {
         padding-left: 10px;
       }
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .page__story {
+    .story__card-info {
+      max-width: 300px;
+      width: 100%;
+    }
+    .story__card-resources {
+      display: block;
+      margin-right: 10px;
+    }
+    .story__card-resource {
+      padding: 0 4px;
+      .css-uls1yk-MuiDivider-root {
+        width: 0%;
+      }
+    }
+    .story__card-img {
+      margin-right: 20px;
+      max-width: 250px;
+      img {
+        width: 100%;
+      }
+    }
+    .story__card-resource + .story__card-resource {
+      margin-top: 20px;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .page__story {
+    .story__card-header {
+      display: block;
+    }
+    .story__card-img {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .story__card-info {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      max-width: 370px;
     }
   }
 }

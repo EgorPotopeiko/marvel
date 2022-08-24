@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 import {getEventStartAction} from "../../../store/events/actions";
 import {TEvent} from "../../../models/event";
 import './card.scss';
+import '../cards.scss';
 
 interface EventsProps{
     event: TEvent
@@ -13,7 +14,7 @@ interface EventsProps{
 const CardEvents: FC<EventsProps> = ({event}) => {
     const dispatch = useDispatch();
     return (
-        <div onClick={() => dispatch(getEventStartAction(event.id))} className='card__events'>
+        <div onClick={() => dispatch(getEventStartAction(event.id))} className='card card__events'>
             <Card sx={{ maxWidth: 315, height: 340 }}>
                 <Link to={`/events/${event.id}`}>
                     <CardActionArea>

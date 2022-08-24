@@ -9,6 +9,7 @@ import CardStories from "../../../components/cards/card_story/card";
 import Loader from "../../../components/loader/loader";
 import {TStory} from "../../../models/story";
 import './page_stories.scss';
+import '../../pages.scss';
 
 const PageStories: FC = () => {
     const dispatch = useDispatch();
@@ -19,7 +20,7 @@ const PageStories: FC = () => {
         dispatch(getAllStoriesStartAction())
     }, [getPage])
     return (
-        <div className="page__stories">
+        <div className="page page__stories">
             <Container maxWidth='lg'>
                 <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 16 }}>
                     {isLoading && (<Loader />)}

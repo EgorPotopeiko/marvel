@@ -1,10 +1,10 @@
 import React, {FC} from 'react';
-import './page_creator.scss';
 import {Container, Divider, List, ListItem, ListItemText, Typography} from "@mui/material";
 import {useSelector} from "react-redux";
 import Loader from "../../../components/loader/loader";
 import {selectCreators} from "../../../store/creators/selectors";
 import {ComicSummary, EventSummary, SeriesSummary, StorySummary} from "../../../models/common";
+import './page_creator.scss';
 
 const PageCreator: FC = () => {
     const {creator, isLoading} = useSelector(selectCreators);

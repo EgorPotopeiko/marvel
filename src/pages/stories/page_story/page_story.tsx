@@ -1,10 +1,10 @@
 import React, {FC} from 'react';
-import './page_story.scss';
 import {Container, Divider, List, ListItem, ListItemText, Typography} from "@mui/material";
 import {useSelector} from "react-redux";
 import Loader from "../../../components/loader/loader";
 import {selectStories} from "../../../store/stories/selectors";
 import {CharacterSummary, ComicSummary, CreatorSummary, EventSummary, SeriesSummary} from "../../../models/common";
+import './page_story.scss';
 
 const PageStory: FC = () => {
     const {story, isLoading} = useSelector(selectStories);
@@ -16,9 +16,6 @@ const PageStory: FC = () => {
                     {!isLoading && (
                         <>
                             <div className="story__card-header">
-                                <div className="story__card-img">
-                                    <img alt='#' src={story!.thumbnail ? story!.thumbnail.path + `/standard_fantastic.jpg` : undefined} />
-                                </div>
                                 <div className="story__card-info">
                                     <Typography gutterBottom variant="h5" component="div">{story!.title}</Typography>
                                     <Typography variant="body2" color="text.secondary">{story!.description}</Typography>

@@ -1,10 +1,11 @@
 import React, {FC} from 'react';
-import {Card, CardActionArea, CardContent, CardMedia, Typography} from "@mui/material";
+import {Card, CardActionArea, CardContent, Typography} from "@mui/material";
 import {useDispatch} from "react-redux";
 import {Link} from "react-router-dom";
 import {getStoryStartAction} from "../../../store/stories/actions";
 import {TStory} from "../../../models/story";
 import './card.scss';
+import '../cards.scss';
 
 interface StoriesProps{
     story: TStory
@@ -13,7 +14,7 @@ interface StoriesProps{
 const CardStories: FC<StoriesProps> = ({story}) => {
     const dispatch = useDispatch();
     return (
-        <div onClick={() => dispatch(getStoryStartAction(story.id))} className='card__story'>
+        <div onClick={() => dispatch(getStoryStartAction(story.id))} className='card card__story'>
             <Card sx={{ maxWidth: 315, height: 340 }}>
                 <Link to={`/stories/${story.id}`}>
                     <CardActionArea>

@@ -1,10 +1,10 @@
 import React, {FC} from 'react';
-import './page_comic.scss';
 import {Container, Divider, List, ListItem, ListItemText, Typography} from "@mui/material";
 import {useSelector} from "react-redux";
 import Loader from "../../../components/loader/loader";
 import {selectComics} from "../../../store/comics/selectors";
 import {CharacterSummary, ComicSummary, CreatorSummary, StorySummary} from "../../../models/common";
+import './page_comic.scss';
 
 const PageComic: FC = () => {
     const {comic, isLoading} = useSelector(selectComics);

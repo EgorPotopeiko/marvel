@@ -35,8 +35,12 @@
   }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 650px) {
   .page__character {
+    .character__card-info {
+      max-width: 300px;
+      width: 100%;
+    }
     .character__card-resources {
       display: block;
       margin-right: 10px;
@@ -56,6 +60,24 @@
     }
     .character__card-resource + .character__card-resource {
       margin-top: 20px;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .page__character {
+    .character__card-header {
+      display: block;
+    }
+    .character__card-img {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .character__card-info {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      max-width: 370px;
     }
   }
 }

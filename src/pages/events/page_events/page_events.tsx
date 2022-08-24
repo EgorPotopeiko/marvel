@@ -1,5 +1,4 @@
 import React, {FC, useEffect} from 'react';
-import './page_events.scss';
 import {Container, Grid, Pagination} from "@mui/material";
 import {useDispatch, useSelector} from "react-redux";
 import {statePage, stateTotal} from "../../../store/pagination/selectors";
@@ -9,7 +8,8 @@ import CardEvents from "../../../components/cards/card_event/card";
 import {selectEvents} from "../../../store/events/selectors";
 import Loader from "../../../components/loader/loader";
 import {TEvent} from "../../../models/event";
-
+import './page_events.scss';
+import '../../pages.scss';
 
 const PageEvents: FC = () => {
     const dispatch = useDispatch();
@@ -20,7 +20,7 @@ const PageEvents: FC = () => {
         dispatch(getAllEventsStartAction())
     }, [getPage])
     return (
-        <div className="page__events">
+        <div className="page page__events">
             <Container maxWidth='lg'>
                 <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 16 }}>
                     {isLoading && (<Loader />)}

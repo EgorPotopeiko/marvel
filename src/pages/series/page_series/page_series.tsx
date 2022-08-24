@@ -1,5 +1,4 @@
 import React, {FC, useEffect} from 'react';
-import './page_series.scss';
 import {Container, Grid, Pagination} from "@mui/material";
 import {useDispatch, useSelector} from "react-redux";
 import {statePage, stateTotal} from "../../../store/pagination/selectors";
@@ -9,6 +8,8 @@ import CardSeries from "../../../components/cards/card_series/card";
 import {selectSeries} from "../../../store/series/selectors";
 import Loader from "../../../components/loader/loader";
 import {TSeries} from "../../../models/series";
+import './page_series.scss';
+import '../../pages.scss';
 
 const PageSeries: FC = () => {
     const dispatch = useDispatch();

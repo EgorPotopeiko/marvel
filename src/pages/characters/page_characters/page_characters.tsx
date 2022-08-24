@@ -9,6 +9,7 @@ import {setPage} from "../../../store/pagination/actions";
 import Loader from "../../../components/loader/loader";
 import {TCharacter} from "../../../models/character";
 import './page_characters.scss';
+import '../../pages.scss';
 
 const PageCharacters: FC = () => {
     const dispatch = useDispatch();
@@ -19,7 +20,7 @@ const PageCharacters: FC = () => {
         dispatch(getAllCharactersStartAction())
     }, [getPage])
     return (
-        <div className="page__characters">
+        <div className="page page__characters">
             <Container maxWidth='lg'>
                 <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 16 }}>
                     {isLoading && (<Loader />)}

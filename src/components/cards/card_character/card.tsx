@@ -5,6 +5,7 @@ import {getCharacterStartAction} from "../../../store/characters/actions";
 import {Link} from "react-router-dom";
 import {TCharacter} from "../../../models/character";
 import './card.scss';
+import '../cards.scss';
 
 interface CharacterProps{
     person: TCharacter
@@ -13,7 +14,7 @@ interface CharacterProps{
 const CardCharacter: FC<CharacterProps> = ({person}) => {
     const dispatch = useDispatch();
     return (
-        <div onClick={() => dispatch(getCharacterStartAction(person.id))} className='card__person'>
+        <div onClick={() => dispatch(getCharacterStartAction(person.id))} className='card card__person'>
             <Card sx={{ maxWidth: 315, height: 340 }}>
                 <Link to={`/characters/${person.id}`}>
                     <CardActionArea>

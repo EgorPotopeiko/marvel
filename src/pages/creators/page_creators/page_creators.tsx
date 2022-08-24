@@ -1,5 +1,4 @@
 import React, {FC, useEffect} from 'react';
-import './page_creators.scss';
 import {Container, Grid, Pagination} from "@mui/material";
 import {useDispatch, useSelector} from "react-redux";
 import {statePage, stateTotal} from "../../../store/pagination/selectors";
@@ -9,6 +8,8 @@ import CardCreators from "../../../components/cards/card_creator/card";
 import {selectCreators} from "../../../store/creators/selectors";
 import Loader from "../../../components/loader/loader";
 import {TCreator} from "../../../models/creator";
+import './page_creators.scss';
+import '../../pages.scss';
 
 const PageCreators: FC = () => {
     const dispatch = useDispatch();
@@ -19,7 +20,7 @@ const PageCreators: FC = () => {
         dispatch(getAllCreatorsStartAction())
     }, [getPage])
     return (
-        <div className="page__creators">
+        <div className="page page__creators">
             <Container maxWidth='lg'>
                 <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 16 }}>
                     {isLoading && (<Loader />)}

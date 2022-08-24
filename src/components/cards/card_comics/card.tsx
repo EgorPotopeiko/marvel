@@ -5,6 +5,7 @@ import {getComicStartAction} from "../../../store/comics/actions";
 import {Link} from "react-router-dom";
 import {TComic} from "../../../models/comic";
 import './card.scss';
+import '../cards.scss';
 
 interface ComicsProps{
     comic: TComic
@@ -13,7 +14,7 @@ interface ComicsProps{
 const CardComics: FC<ComicsProps> = ({comic}) => {
     const dispatch = useDispatch()
     return (
-        <div onClick={() => dispatch(getComicStartAction(comic.id))} className='card__comics'>
+        <div onClick={() => dispatch(getComicStartAction(comic.id))} className='card card__comics'>
             <Card sx={{ maxWidth: 315, height: 340 }}>
                 <Link to={`/comics/${comic.id}`}>
                     <CardActionArea>

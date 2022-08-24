@@ -1,10 +1,10 @@
 import React, {FC} from 'react';
-import './page_event.scss';
 import {Container, Divider, List, ListItem, ListItemText, Typography} from "@mui/material";
 import {useSelector} from "react-redux";
 import Loader from "../../../components/loader/loader";
 import {selectEvents} from "../../../store/events/selectors";
 import {CharacterSummary, ComicSummary, CreatorSummary, SeriesSummary, StorySummary} from "../../../models/common";
+import './page_event.scss';
 
 const PageEvent: FC = () => {
     const {event, isLoading} = useSelector(selectEvents);

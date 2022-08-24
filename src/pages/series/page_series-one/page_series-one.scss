@@ -34,3 +34,50 @@
     }
   }
 }
+
+@media (max-width: 650px) {
+  .page__singleSeries {
+    .singleSeries__card-info {
+      max-width: 300px;
+      width: 100%;
+    }
+    .singleSeries__card-resources {
+      display: block;
+      margin-right: 10px;
+    }
+    .singleSeries__card-resource {
+      padding: 0 4px;
+      .css-uls1yk-MuiDivider-root {
+        width: 0%;
+      }
+    }
+    .singleSeries__card-img {
+      margin-right: 20px;
+      max-width: 250px;
+      img {
+        width: 100%;
+      }
+    }
+    .singleSeries__card-resource + .singleSeries__card-resource {
+      margin-top: 20px;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .page__singleSeries {
+    .singleSeries__card-header {
+      display: block;
+    }
+    .singleSeries__card-img {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .singleSeries__card-info {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      max-width: 370px;
+    }
+  }
+}

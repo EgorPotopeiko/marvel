@@ -1,10 +1,10 @@
 import React, {FC} from 'react';
-import './page_series-one.scss';
 import {Container, Divider, List, ListItem, ListItemText, Typography} from "@mui/material";
 import {useSelector} from "react-redux";
 import Loader from "../../../components/loader/loader";
 import {selectSeries} from "../../../store/series/selectors";
 import {CharacterSummary, ComicSummary, CreatorSummary, EventSummary, StorySummary} from "../../../models/common";
+import './page_series-one.scss';
 
 const PageSeriesOne: FC = () => {
     const {select_series, isLoading} = useSelector(selectSeries);
