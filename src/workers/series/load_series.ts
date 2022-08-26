@@ -1,18 +1,19 @@
-import {AxiosResponse} from "axios";
-import { call, put } from 'redux-saga/effects';
+import { AxiosResponse } from "axios";
+import { call, put } from "redux-saga/effects";
 import Series from "../../services/series";
 import {
-    getSeriesErrorAction,
-    getSeriesSuccessAction
+  getSeriesErrorAction,
+  getSeriesSuccessAction,
 } from "../../store/series/actions";
 
-function* loadSeries({payload: id}: {type: string, payload: number}) {
-    try {
-        const { data }: AxiosResponse = yield call(Series.getSeries, id);
-        const newData = data.data.results;
-        yield put(getSeriesSuccessAction(...newData));
-    }
-    catch (error) {yield put(getSeriesErrorAction(error))}
+function* loadSeries({ payload: id }: { type: string; payload: number }) {
+  try {
+    const { data }: AxiosResponse = yield call(Series.getSeries, id);
+    const newData = data.data.results;
+    yield put(getSeriesSuccessAction(...newData));
+  } catch (error) {
+    yield put(getSeriesErrorAction(error));
+  }
 }
 
-export default loadSeries
+export default loadSeries;

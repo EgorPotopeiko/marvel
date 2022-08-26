@@ -1,3 +1,3 @@
 export const SearchActionTypes = {
-    SET_SEARCH: '[Search] SET_SEARCH'
-}
+  SET_SEARCH: "[Search] SET_SEARCH",
+};

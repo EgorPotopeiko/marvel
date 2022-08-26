@@ -1,18 +1,19 @@
-import {AxiosResponse} from "axios";
-import { call, put } from 'redux-saga/effects';
+import { AxiosResponse } from "axios";
+import { call, put } from "redux-saga/effects";
 import Characters from "../../services/characters";
 import {
-    getCharacterErrorAction,
-    getCharacterSuccessAction
+  getCharacterErrorAction,
+  getCharacterSuccessAction,
 } from "../../store/characters/actions";
 
-function* loadCharacter({payload: id}: {type: string, payload: number}) {
-    try {
-        const { data }: AxiosResponse = yield call(Characters.getCharacter, id);
-        const newData = data.data.results;
-        yield put(getCharacterSuccessAction(...newData));
-    }
-    catch (error) {yield put(getCharacterErrorAction(error))}
+function* loadCharacter({ payload: id }: { type: string; payload: number }) {
+  try {
+    const { data }: AxiosResponse = yield call(Characters.getCharacter, id);
+    const newData = data.data.results;
+    yield put(getCharacterSuccessAction(...newData));
+  } catch (error) {
+    yield put(getCharacterErrorAction(error));
+  }
 }
 
-export default loadCharacter
+export default loadCharacter;

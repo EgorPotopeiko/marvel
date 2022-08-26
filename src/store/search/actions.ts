@@ -1,4 +1,4 @@
-import {createAction} from "@reduxjs/toolkit";
-import {SearchActionTypes} from "./action-types";
+import { createAction } from "@reduxjs/toolkit";
+import { SearchActionTypes } from "./action-types";
 
-export const setSearch: any = createAction(SearchActionTypes.SET_SEARCH)
+export const setSearch: any = createAction(SearchActionTypes.SET_SEARCH);

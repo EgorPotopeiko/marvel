@@ -1,15 +1,16 @@
-import {combineReducers} from "@reduxjs/toolkit";
-import charactersReducer from '../store/characters/reducer';
-import paginationReducer from '../store/pagination/reducer';
-import comicsReducer from '../store/comics/reducer';
-import creatorsReducer from '../store/creators/reducer';
-import eventsReducer from '../store/events/reducer';
-import seriesReducer from '../store/series/reducer';
-import storiesReducer from '../store/stories/reducer';
-import searchReducer from '../store/search/reducer';
-import { History } from 'history';
+import { combineReducers } from "@reduxjs/toolkit";
+import charactersReducer from "../store/characters/reducer";
+import paginationReducer from "../store/pagination/reducer";
+import comicsReducer from "../store/comics/reducer";
+import creatorsReducer from "../store/creators/reducer";
+import eventsReducer from "../store/events/reducer";
+import seriesReducer from "../store/series/reducer";
+import storiesReducer from "../store/stories/reducer";
+import searchReducer from "../store/search/reducer";
+import { History } from "history";
 
-const rootReducer = (history: History) => combineReducers({
+const rootReducer = (history: History) =>
+  combineReducers({
     characters: charactersReducer,
     pagination: paginationReducer,
     comics: comicsReducer,
@@ -17,7 +18,7 @@ const rootReducer = (history: History) => combineReducers({
     events: eventsReducer,
     series: seriesReducer,
     stories: storiesReducer,
-    search: searchReducer
-})
+    search: searchReducer,
+  });
 
-export default rootReducer
+export default rootReducer;

@@ -1,18 +1,19 @@
-import {AxiosResponse} from "axios";
-import { call, put } from 'redux-saga/effects';
+import { AxiosResponse } from "axios";
+import { call, put } from "redux-saga/effects";
 import Events from "../../services/events";
 import {
-    getEventErrorAction,
-    getEventSuccessAction
+  getEventErrorAction,
+  getEventSuccessAction,
 } from "../../store/events/actions";
 
-function* loadEvent({payload: id}: {type: string, payload: number}) {
-    try {
-        const { data }: AxiosResponse = yield call(Events.getEvent, id);
-        const newData = data.data.results;
-        yield put(getEventSuccessAction(...newData));
-    }
-    catch (error) {yield put(getEventErrorAction(error))}
+function* loadEvent({ payload: id }: { type: string; payload: number }) {
+  try {
+    const { data }: AxiosResponse = yield call(Events.getEvent, id);
+    const newData = data.data.results;
+    yield put(getEventSuccessAction(...newData));
+  } catch (error) {
+    yield put(getEventErrorAction(error));
+  }
 }
 
-export default loadEvent
+export default loadEvent;
