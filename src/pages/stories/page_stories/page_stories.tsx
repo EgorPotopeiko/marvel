@@ -30,7 +30,7 @@ const PageStories: FC = () => {
                         </Grid>
                     )))}
                 </Grid>
-                <Pagination page={getPage} count={Math.floor(total / 20) + 1} onChange={(_event: any, value: number) => dispatch(setPage(value))} />
+                <Pagination page={getPage} count={Math.floor(total / 20) + 1} siblingCount={0} boundaryCount={3} onChange={(_event: any, value: number) => dispatch(setPage(value))} />
             </Container>
         </div>
     );

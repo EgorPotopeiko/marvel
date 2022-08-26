@@ -31,11 +31,19 @@
       .css-10hburv-MuiTypography-root {
         padding-left: 10px;
       }
+      .css-83ijpv-MuiTypography-root {
+        padding: 0 10px;
+        max-width: 280px;
+        word-break: break-word;
+        a {
+          color: black;
+        }
+      }
     }
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 750px) {
   .page__story {
     .story__card-info {
       max-width: 300px;
@@ -49,6 +57,9 @@
       padding: 0 4px;
       .css-uls1yk-MuiDivider-root {
         width: 0%;
+      }
+      .css-83ijpv-MuiTypography-root {
+        max-width: 500px;
       }
     }
     .story__card-img {
