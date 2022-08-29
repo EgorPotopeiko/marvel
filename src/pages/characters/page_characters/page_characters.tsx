@@ -1,6 +1,6 @@
 import React, { FC, useEffect } from "react";
 import CardPerson from "../../../components/cards/card_character/card";
-import { Container, Grid, Pagination } from "@mui/material";
+import { Container, Pagination } from "@mui/material";
 import { getAllCharactersStartAction } from "../../../store/characters/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { selectCharacters } from "../../../store/characters/selectors";
@@ -22,19 +22,17 @@ const PageCharacters: FC = () => {
   return (
     <div className="page page__characters">
       <Container maxWidth="lg">
-        <Grid
-          container
-          spacing={{ xs: 2, md: 3 }}
-          columns={{ xs: 4, sm: 8, md: 16 }}
-        >
+        <div className="page__inner">
           {isLoading && <Loader />}
           {!isLoading &&
             characters.map((character: TCharacter) => (
-              <Grid item xs={2} sm={2.6} md={4} key={character.id}>
-                <CardPerson data-testid="person_test-id" person={character} />
-              </Grid>
+              <CardPerson
+                key={character.id}
+                data-testid="person_test-id"
+                person={character}
+              />
             ))}
-        </Grid>
+        </div>
         <Pagination
           page={getPage}
           count={Math.floor(total / 20) + 1}

@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, Fragment } from "react";
 import {
   Container,
   Divider,
@@ -72,8 +72,8 @@ const PageSeriesOne: FC = () => {
                         (creator: CreatorSummary) => {
                           const id = creator.resourceURI.match(regId);
                           return (
-                            <>
-                              <ListItem key={creator.name} disableGutters>
+                            <Fragment key={creator.resourceURI}>
+                              <ListItem disableGutters>
                                 <ListItemText
                                   primary={creator.name}
                                   secondary={
@@ -89,7 +89,7 @@ const PageSeriesOne: FC = () => {
                                 />
                               </ListItem>
                               <Divider variant="inset" component="li" />
-                            </>
+                            </Fragment>
                           );
                         }
                       )}
@@ -113,8 +113,8 @@ const PageSeriesOne: FC = () => {
                         (character: CharacterSummary) => {
                           const id = character.resourceURI.match(regId);
                           return (
-                            <>
-                              <ListItem key={character.name} disableGutters>
+                            <Fragment key={character.resourceURI}>
+                              <ListItem disableGutters>
                                 <ListItemText
                                   primary={character.name}
                                   secondary={
@@ -130,7 +130,7 @@ const PageSeriesOne: FC = () => {
                                 />
                               </ListItem>
                               <Divider variant="inset" component="li" />
-                            </>
+                            </Fragment>
                           );
                         }
                       )}
@@ -154,8 +154,8 @@ const PageSeriesOne: FC = () => {
                         (story: StorySummary) => {
                           const id = story.resourceURI.match(regId);
                           return (
-                            <>
-                              <ListItem key={story.name} disableGutters>
+                            <Fragment key={story.resourceURI}>
+                              <ListItem disableGutters>
                                 <ListItemText
                                   primary={story.name}
                                   secondary={
@@ -171,7 +171,7 @@ const PageSeriesOne: FC = () => {
                                 />
                               </ListItem>
                               <Divider variant="inset" component="li" />
-                            </>
+                            </Fragment>
                           );
                         }
                       )}
@@ -195,8 +195,8 @@ const PageSeriesOne: FC = () => {
                         (comic: ComicSummary) => {
                           const id = comic.resourceURI.match(regId);
                           return (
-                            <>
-                              <ListItem key={comic.name} disableGutters>
+                            <Fragment key={comic.resourceURI}>
+                              <ListItem disableGutters>
                                 <ListItemText
                                   primary={comic.name}
                                   secondary={
@@ -212,7 +212,7 @@ const PageSeriesOne: FC = () => {
                                 />
                               </ListItem>
                               <Divider variant="inset" component="li" />
-                            </>
+                            </Fragment>
                           );
                         }
                       )}
@@ -236,8 +236,8 @@ const PageSeriesOne: FC = () => {
                         (event: EventSummary) => {
                           const id = event.resourceURI.match(regId);
                           return (
-                            <>
-                              <ListItem key={event.name} disableGutters>
+                            <Fragment key={event.resourceURI}>
+                              <ListItem disableGutters>
                                 <ListItemText
                                   primary={event.name}
                                   secondary={
@@ -253,7 +253,7 @@ const PageSeriesOne: FC = () => {
                                 />
                               </ListItem>
                               <Divider variant="inset" component="li" />
-                            </>
+                            </Fragment>
                           );
                         }
                       )}

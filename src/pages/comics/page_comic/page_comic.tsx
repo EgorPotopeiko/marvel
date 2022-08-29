@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, Fragment } from "react";
 import {
   Container,
   Divider,
@@ -83,7 +83,7 @@ const PageComic: FC = () => {
                       {comic!.variants.map((variant: ComicSummary) => {
                         const id = variant.resourceURI.match(regId);
                         return (
-                          <>
+                          <Fragment key={variant.resourceURI}>
                             <ListItem key={variant.name} disableGutters>
                               <ListItemText
                                 primary={variant.name}
@@ -100,7 +100,7 @@ const PageComic: FC = () => {
                               />
                             </ListItem>
                             <Divider variant="inset" component="li" />
-                          </>
+                          </Fragment>
                         );
                       })}
                     </List>
@@ -122,7 +122,7 @@ const PageComic: FC = () => {
                       {comic!.creators.items.map((creator: CreatorSummary) => {
                         const id = creator.resourceURI.match(regId);
                         return (
-                          <>
+                          <Fragment key={creator.resourceURI}>
                             <ListItem key={creator.name} disableGutters>
                               <ListItemText
                                 primary={creator.name}
@@ -139,7 +139,7 @@ const PageComic: FC = () => {
                               />
                             </ListItem>
                             <Divider variant="inset" component="li" />
-                          </>
+                          </Fragment>
                         );
                       })}
                     </List>
@@ -162,8 +162,8 @@ const PageComic: FC = () => {
                         (character: CharacterSummary) => {
                           const id = character.resourceURI.match(regId);
                           return (
-                            <>
-                              <ListItem key={character.name} disableGutters>
+                            <Fragment key={character.resourceURI}>
+                              <ListItem disableGutters>
                                 <ListItemText
                                   primary={character.name}
                                   secondary={
@@ -179,7 +179,7 @@ const PageComic: FC = () => {
                                 />
                               </ListItem>
                               <Divider variant="inset" component="li" />
-                            </>
+                            </Fragment>
                           );
                         }
                       )}
@@ -202,8 +202,8 @@ const PageComic: FC = () => {
                       {comic!.stories.items.map((story: StorySummary) => {
                         const id = story.resourceURI.match(regId);
                         return (
-                          <>
-                            <ListItem key={story.name} disableGutters>
+                          <Fragment key={story.resourceURI}>
+                            <ListItem disableGutters>
                               <ListItemText
                                 primary={story.name}
                                 secondary={
@@ -219,7 +219,7 @@ const PageComic: FC = () => {
                               />
                             </ListItem>
                             <Divider variant="inset" component="li" />
-                          </>
+                          </Fragment>
                         );
                       })}
                     </List>

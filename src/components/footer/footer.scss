@@ -1,12 +1,13 @@
 .footer {
   background-color: #151515;
+  height: 55vh;
   h1 {
     margin-bottom: 0;
   }
   &__inner {
     display: flex;
     justify-content: space-between;
-    padding-top: 30px;
+    padding-top: 80px;
   }
   &__follow {
     color: #767676;
@@ -36,12 +37,12 @@
     }
   }
   &__info {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     padding: 30px 0;
-    margin-top: 50px;
+    margin-top: 80px;
     &-text {
-      font-size: 13px;
+      font-size: 14px;
       color: #767676;
       padding: 0;
       transition: .2s all;
@@ -60,6 +61,7 @@
 
 @media (max-width: 750px) {
   .footer {
+    height: 70vh;
     &__info {
       display: block;
       margin-top: 15px;
@@ -72,8 +74,10 @@
 
 @media (max-width: 450px) {
   .footer {
+    height: 75vh;
     &__inner {
       display: block;
+      padding-top: 50px;
     }
     &__follow {
       margin-right: auto;

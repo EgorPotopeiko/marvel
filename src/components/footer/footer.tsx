@@ -11,7 +11,7 @@ import "./footer.scss";
 
 const Footer: FC = () => {
   return (
-    <div className="footer">
+    <footer className="footer">
       <Container maxWidth="lg">
         <div className="footer__inner">
           <div className="footer__img">
@@ -49,7 +49,7 @@ const Footer: FC = () => {
           <p className="footer__info-text">@2022 MARVEL</p>
         </div>
       </Container>
-    </div>
+    </footer>
   );
 };
 

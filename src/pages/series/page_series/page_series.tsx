@@ -1,5 +1,5 @@
 import React, { FC, useEffect } from "react";
-import { Container, Grid, Pagination } from "@mui/material";
+import { Container, Pagination } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { statePage, stateTotal } from "../../../store/pagination/selectors";
 import { setPage } from "../../../store/pagination/actions";
@@ -22,19 +22,13 @@ const PageSeries: FC = () => {
   return (
     <div className="page__series">
       <Container maxWidth="lg">
-        <Grid
-          container
-          spacing={{ xs: 2, md: 3 }}
-          columns={{ xs: 4, sm: 8, md: 16 }}
-        >
+        <div className="page__inner">
           {isLoading && <Loader />}
           {!isLoading &&
             series.map((series: TSeries) => (
-              <Grid item xs={2} sm={2.6} md={4} key={series.id}>
-                <CardSeries series={series} />
-              </Grid>
+              <CardSeries key={series.id} series={series} />
             ))}
-        </Grid>
+        </div>
         <Pagination
           page={getPage}
           count={Math.floor(total / 20) + 1}
