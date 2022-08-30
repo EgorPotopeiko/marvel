@@ -15,7 +15,7 @@ const Header: FC = () => {
   const dispatch = useDispatch();
   const [search, setSearch] = useState("");
   return (
-    <div className="header">
+    <header className="header">
       <Container maxWidth="lg">
         <img
           height="50px"
@@ -68,7 +68,7 @@ const Header: FC = () => {
           </Button>
         </div>
       </Container>
-    </div>
+    </header>
   );
 };
 
